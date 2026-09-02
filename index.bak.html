@@ -1,0 +1,577 @@
+<!doctype html>
+<html>
+  <!-- HEADER AND METADATA -->
+  <head>
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+    />
+    <title>Tahmid Islam</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
+    <noscript>
+      <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+  </head>
+
+  <body class="is-preload">
+    <!-- Fixed Minimalist Header -->
+    <nav id="external-nav">
+      <a href="#" class="icon brands fa-github" title="GitHub"
+        ><span class="label">GitHub</span></a
+      >
+      <a
+        href="https://www.linkedin.com/in/tahmidui/"
+        class="icon brands fa-linkedin-in"
+        title="LinkedIn"
+        ><span class="label">LinkedIn</span></a
+      >
+      <a href="#" class="icon brands fa-orcid" title="ORCID"
+        ><span class="label">ORCID</span></a
+      >
+      <a href="#" class="icon brands fa-google" title="Google Scholar"
+        ><span class="label">Google Scholar</span></a
+      >
+    </nav>
+
+    <!-- CV Modal -->
+    <dialog id="cv-modal">
+      <h3 style="color: #333">Select Document</h3>
+      <ul class="actions stacked">
+        <li>
+          <a href="academic_cv.pdf" download class="button primary fit"
+            >Academic CV (PDF)</a
+          >
+        </li>
+        <li>
+          <a href="industry_resume.pdf" download class="button primary fit"
+            >Industry Resume (PDF)</a
+          >
+        </li>
+        <li>
+          <button
+            onclick="document.getElementById('cv-modal').close()"
+            class="button small alt fit"
+          >
+            Close
+          </button>
+        </li>
+      </ul>
+    </dialog>
+
+    <!-- Wrapper -->
+    <div id="wrapper" class="divided">
+      <!-- Hero / Basic Info -->
+      <section
+        class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right"
+      >
+        <div class="content">
+          <h1>
+            Hi.<br />
+            I'm Tahmid.
+          </h1>
+          <p class="major">I'm a quantitative social scientist.</p>
+          <ul class="actions stacked">
+            <li>
+              <a href="#first" class="button big wide smooth-scroll-middle"
+                >Learn more about me</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="image">
+          <img src="images/banner.jpeg" alt="Tahmid in Colorado!" />
+        </div>
+      </section>
+      <!-- About Me -->
+      <section
+        class="spotlight style1 orient-right content-align-left image-position-left onscroll-image-fade-in"
+        id="first"
+      >
+        <div class="content">
+          <h2>About Me</h2>
+          <p>
+            I am a sociologist, researcher, and instructor pursuing my master’s
+            degree at Texas Tech University. My work blends religion, mental
+            health, disability studies, and data analysis to advance social
+            well-being.
+          </p>
+          <ul class="actions stacked">
+            <li>
+              <button
+                onclick="document.getElementById('cv-modal').showModal()"
+                class="button big wide primary"
+              >
+                Download CV / Resume
+              </button>
+            </li>
+            <li>
+              <a
+                href="#academic"
+                class="button big wide smooth-scroll-middle alt"
+                >Explore my work</a
+              >
+            </li>
+          </ul>
+          <!-- <ul class="actions stacked">
+            <li><a href="#gallery" class="button">View the collection</a></li>
+          </ul> -->
+        </div>
+        <div class="image">
+          <img src="images/pop-tahmid.png" alt="Portrait of Tahmid Ul Islam" />
+        </div>
+      </section>
+
+      <section
+        class="spotlight style1 orient-left content-align-left onscroll-image-fade-in"
+        id="education"
+      >
+        <div class="content">
+          <h2>Education</h2>
+
+          <!-- Texas Tech University Block -->
+          <div style="margin-bottom: 2em">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                margin-bottom: 10px;
+              "
+            >
+              <img
+                src="icons/ttu-logo.webp"
+                alt="TTU Logo"
+                style="width: 40px; height: auto"
+              />
+              <h3 style="font-family: &quot;Domine&quot;, serif; margin: 0">
+                Texas Tech University
+              </h3>
+            </div>
+            <p style="margin-bottom: 5px; color: #666">
+              Lubbock, Texas, United States
+            </p>
+            <div
+              style="font-family: &quot;Domine&quot;, serif; padding-left: 55px"
+            >
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  margin-bottom: 5px;
+                "
+              >
+                <span>Master of Science in Data Science</span>
+                <span>(exp.) 2027</span>
+              </div>
+              <div style="display: flex; justify-content: space-between">
+                <span>Master of Arts in Sociology</span>
+                <span>2026</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- University of Dhaka Block -->
+          <div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                margin-bottom: 10px;
+              "
+            >
+              <img
+                src="icons/du-logo.svg"
+                alt="DU Logo"
+                style="width: 40px; height: auto"
+              />
+              <h3 style="font-family: &quot;Domine&quot;, serif; margin: 0">
+                University of Dhaka
+              </h3>
+            </div>
+            <p style="margin-bottom: 5px; color: #666">Dhaka, Bangladesh</p>
+            <div
+              style="font-family: &quot;Domine&quot;, serif; padding-left: 55px"
+            >
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  margin-bottom: 5px;
+                "
+              >
+                <span>Master of Social Sciences in Sociology</span>
+                <span>2024</span>
+              </div>
+              <div style="display: flex; justify-content: space-between">
+                <span>Bachelor of Social Sciences in Sociology</span>
+                <span>2023</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Graduation Photo on the Right -->
+        <div class="image">
+          <img
+            src="images/ttu-ma-commence.jpg"
+            alt="Tahmid Ul Islam Commencement"
+          />
+        </div>
+      </section>
+
+      <!-- Academic & Research -->
+      <section class="wrapper style1 align-center" id="academic">
+        <div class="inner medium">
+          <h2>Academic & Research</h2>
+          <p>
+            Exploring the intersections of societal well-being and data-driven
+            insights.
+          </p>
+
+          <div
+            class="items style1 medium onscroll-fade-in"
+            style="margin-bottom: 2em"
+          >
+            <section style="text-align: left; width: 100%">
+              <h3>Selected Publications</h3>
+              <ul>
+                <li>
+                  <a href="#">"Title of Publication 1"</a> – Journal Name, Year
+                </li>
+                <li>
+                  <a href="#">"Title of Publication 2"</a> – Journal Name, Year
+                </li>
+              </ul>
+            </section>
+          </div>
+
+          <h3>Detailed Research Interests</h3>
+          <details>
+            <summary>
+              <span class="fa-solid fa-hands-praying"></span> Sociology of
+              Religion & Well-Being
+            </summary>
+            <p style="margin-top: 1em">
+              Analyzing the relationship between religiosity (beliefs and
+              practices) and Subjective Well-Being using large-scale survey
+              data.
+            </p>
+          </details>
+          <details>
+            <summary>
+              <span class="fa-solid fa-wheelchair"></span> Disability Studies &
+              Mental Health
+            </summary>
+            <p style="margin-top: 1em">
+              Exploring life satisfaction across disability and life course
+              timing, identifying actionable predictors for better social
+              support structures.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="wrapper style1 align-center invert" id="skills">
+        <div class="inner medium">
+          <h2
+            style="font-family: &quot;Courier Prime&quot;, Courier, monospace"
+          >
+            <b>Skills</b>
+          </h2>
+
+          <!-- Grid acts like a table, strictly enforcing 3 columns -->
+          <div
+            class="skills-grid onscroll-fade-in"
+            style="
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 1em;
+              text-align: center;
+            "
+          >
+            <!-- Column 1: Database Management -->
+            <div>
+              <i
+                class="fa-solid fa-database fa-2x"
+                style="display: block; margin-bottom: 15px"
+              ></i>
+              <h4 style="font-weight: 500">Database Management</h4>
+
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 25px;
+                  margin-top: 1.5em;
+                "
+              >
+                <!-- Using MySQL icon as the standard for SQL -->
+                <div class="icon-wrapper">
+                  <i class="devicon-mysql-plain" style="font-size: 2.5em"></i>
+                  <span>SQL / MySQL</span>
+                </div>
+                <div class="icon-wrapper">
+                  <i class="devicon-mongodb-plain" style="font-size: 2.5em"></i>
+                  <span>MongoDB</span>
+                </div>
+                <!-- Proxy icon for ERD -->
+                <div class="icon-wrapper">
+                  <i
+                    class="fa-solid fa-project-diagram"
+                    style="font-size: 2.5em"
+                  ></i>
+                  <span>ERD Modeling</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Column 2: Data Analysis -->
+            <div>
+              <i
+                class="fa-solid fa-chart-line fa-2x"
+                style="display: block; margin-bottom: 15px"
+              ></i>
+              <h4 style="font-weight: 500">Data Analysis</h4>
+
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 25px;
+                  margin-top: 1.5em;
+                "
+              >
+                <div class="icon-wrapper">
+                  <i
+                    class="fa-brands fa-r-project"
+                    style="font-size: 2.5em"
+                  ></i>
+                  <span>R</span>
+                </div>
+                <div class="icon-wrapper">
+                  <i class="fa-brands fa-python" style="font-size: 2.5em"></i>
+                  <span>Python</span>
+                </div>
+                <!-- Proxy icon for Stata -->
+                <div class="icon-wrapper">
+                  <img
+                    src="/icons/stata-icon.svg"
+                    alt="Stata Logo"
+                    style="
+                      font-size: 2.5em;
+                      height: 0.4em;
+                      width: auto;
+                      margin: 8px 0;
+                      filter: brightness(0) invert(1);
+                    "
+                  />
+                  <span>Stata</span>
+                </div>
+                <div class="icon-wrapper">
+                  <i
+                    class="fa-solid fa-file-excel"
+                    style="font-size: 2.5em"
+                  ></i>
+                  <span>Excel</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Column 3: Tools and Environments -->
+            <div>
+              <i
+                class="fa-solid fa-toolbox fa-2x"
+                style="display: block; margin-bottom: 15px"
+              ></i>
+              <h4 style="font-weight: 500">Tools & Environments</h4>
+
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 25px;
+                  margin-top: 1.5em;
+                "
+              >
+                <div class="icon-wrapper">
+                  <i
+                    class="devicon-latex-original"
+                    style="font-size: 2.5em"
+                  ></i>
+                  <span>LaTeX</span>
+                </div>
+                <div class="icon-wrapper">
+                  <i class="devicon-vim-plain" style="font-size: 2.5em"></i>
+                  <span>Vim</span>
+                </div>
+                <div class="icon-wrapper">
+                  <i class="fa-brands fa-git-alt" style="font-size: 2.5em"></i>
+                  <span>Git</span>
+                </div>
+                <div class="icon-wrapper">
+                  <i class="devicon-vscode-plain" style="font-size: 2.5em"></i>
+                  <span>VS Code</span>
+                </div>
+                <div class="icon-wrapper">
+                  <i class="fa-brands fa-linux" style="font-size: 2.5em"></i>
+                  <span>Linux</span>
+                </div>
+                <div class="icon-wrapper">
+                  <i class="fa-solid fa-terminal" style="font-size: 2.5em"></i>
+                  <span>Bash</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education & Experience -->
+      <section class="wrapper style1 align-center" id="experience">
+        <div class="inner medium">
+          <h2>Education & Experience</h2>
+
+          <div class="timeline-item onscroll-fade-in">
+            <h3>Master of Science in Data Science (ISQS)</h3>
+            <p>
+              <strong>Rawls College of Business, Texas Tech University</strong>
+              | <em>Present</em>
+            </p>
+          </div>
+
+          <div class="timeline-item onscroll-fade-in">
+            <h3>Master of Arts in Sociology</h3>
+            <p><strong>Texas Tech University</strong></p>
+          </div>
+
+          <div class="timeline-item onscroll-fade-in">
+            <h3>Master & Bachelor of Social Sciences</h3>
+            <p><strong>University of Dhaka</strong></p>
+          </div>
+
+          <div class="timeline-item onscroll-fade-in">
+            <h3>Former Graduate Teaching Assistant & Instructor</h3>
+            <p>
+              Supported undergraduate learning, managed grading, and developed
+              interpersonal skills by providing personalized feedback across
+              diverse classroom settings.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery (Life in Pixels) -->
+      <section class="wrapper style1 align-center" id="gallery">
+        <div class="inner">
+          <h2>Life in Pixels</h2>
+          <p>Some moments captured.</p>
+        </div>
+
+        <div class="gallery style2 medium lightbox onscroll-fade-in">
+          <!-- Gallery Items Omitted for Brevity - Insert your 19 <article> tags here -->
+          <article>
+            <a href="images/gallery/fulls/01.jpeg" class="image"
+              ><img src="images/gallery/thumbs/01.jpeg" alt="01"
+            /></a>
+            <div class="caption">
+              <h3>Photo 01</h3>
+              <p></p>
+              <ul class="actions fixed">
+                <li><span class="button small">Details</span></li>
+              </ul>
+            </div>
+          </article>
+          <!-- ... Add the rest of your original photo articles here ... -->
+        </div>
+      </section>
+
+      <!-- Get In Touch Form -->
+      <section class="wrapper style1 align-center">
+        <div class="inner medium">
+          <h2>Get in touch</h2>
+          <form id="contact-form">
+            <div class="fields">
+              <div class="field half">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" value="" required />
+              </div>
+              <div class="field half">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" value="" required />
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  rows="6"
+                  required
+                ></textarea>
+              </div>
+            </div>
+            <ul class="actions special">
+              <li>
+                <input
+                  type="submit"
+                  name="submit"
+                  id="submit"
+                  value="Send Message"
+                />
+              </li>
+            </ul>
+          </form>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="wrapper style1 align-center">
+        <div class="inner">
+          <ul class="icons">
+            <li>
+              <a
+                href="https://github.com/yourusername"
+                class="icon brands style2 fa-github"
+                ><span class="label">GitHub</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/tahmidui/"
+                class="icon brands style2 fa-linkedin-in"
+                ><span class="label">LinkedIn</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="mailto:tahmid.ul.islam71@outlook.com"
+                class="icon style2 fa-envelope"
+                ><span class="label">Email</span></a
+              >
+            </li>
+          </ul>
+          <p>&copy; 2026 Tahmid Ul Islam. Design adapted from HTML5 UP.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

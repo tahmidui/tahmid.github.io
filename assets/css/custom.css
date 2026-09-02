@@ -1,0 +1,2234 @@
+/*
+  Tahmid Ul Islam — Custom Styles
+  Palette: #0A122A · #FBFAF8 · #E7DECD · #804E49
+*/
+
+:root {
+  --navy: #0a122a;
+  --paper: #fbfaf8;
+  --sand: #e7decd;
+  --clay: #804e49;
+
+  --content-wide: 1180px;
+  --content-reading: 760px;
+  --radius: 14px;
+  --line: rgba(10, 18, 42, 0.14);
+  --line-light: rgba(251, 250, 248, 0.2);
+}
+
+/* =========================================
+   GLOBAL
+   ========================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 20000;
+  padding: 0.75rem 1rem;
+  background: var(--paper);
+  color: var(--navy);
+  border: 2px solid var(--navy);
+  border-radius: 4px;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transform: translateY(calc(-100% - 1rem));
+  transition: transform 0.15s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--paper) !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 6px var(--navy) !important;
+}
+
+#main-content:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: -3px;
+}
+
+body {
+  background: var(--paper);
+  color: var(--navy);
+  font-family: "Gelasio", Georgia, serif;
+  font-size: 1.04rem;
+  font-weight: 400;
+}
+
+body,
+input,
+select,
+textarea,
+button {
+  color: var(--navy);
+  font-family: "Gelasio", Georgia, serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--navy);
+  font-family: "Domine", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+p,
+li {
+  color: var(--navy);
+}
+
+p {
+  line-height: 1.75;
+}
+
+.editorial-possessive {
+  position: relative;
+  top: -0.16em;
+  color: inherit;
+  font-family: inherit;
+  font-size: 0.78em;
+  font-weight: inherit;
+  letter-spacing: 0;
+}
+
+a {
+  color: var(--clay);
+  text-decoration-color: rgba(128, 78, 73, 0.4);
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--navy);
+}
+
+#wrapper.divided > * {
+  border-color: var(--line);
+}
+
+.section-kicker {
+  margin: 0 0 0.65rem;
+  color: var(--clay) !important;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* Section rhythm */
+.banner,
+#education,
+#experience,
+#contact {
+  background: var(--paper);
+}
+
+#first,
+#research,
+#gallery {
+  background: var(--sand);
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  border-color: rgba(10, 18, 42, 0.48) !important;
+  color: var(--navy) !important;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease !important;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+  border-color: var(--clay) !important;
+  color: var(--clay) !important;
+  transform: translateY(-1px);
+}
+
+.button.primary,
+button.primary,
+input[type="submit"].primary {
+  background: var(--navy) !important;
+  border-color: var(--navy) !important;
+  color: var(--paper) !important;
+  box-shadow: none !important;
+}
+
+.button.primary:hover,
+button.primary:hover,
+input[type="submit"].primary:hover {
+  background: var(--clay) !important;
+  border-color: var(--clay) !important;
+  color: var(--paper) !important;
+}
+
+/* =========================================
+   SOCIAL NAV
+   ========================================= */
+
+#external-nav {
+  position: fixed;
+  top: 1.15rem;
+  right: 1.45rem;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  mix-blend-mode: normal;
+  isolation: isolate;
+  opacity: 0.62;
+  transition: opacity 0.2s ease;
+}
+
+#external-nav:hover,
+#external-nav:focus-within {
+  opacity: 0.95;
+}
+
+#external-nav a,
+#external-nav .social-placeholder {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  color: #ffffff;
+  background: rgba(10, 18, 42, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 50%;
+  font-size: 1rem;
+  text-decoration: none;
+  filter: none;
+  text-shadow: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+#external-nav .social-placeholder {
+  cursor: default;
+}
+
+#external-nav a:hover {
+  background: #ffffff;
+  color: var(--navy);
+  border-color: var(--navy);
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   MODAL
+   ========================================= */
+
+dialog::backdrop {
+  background: rgba(10, 18, 42, 0.74);
+  backdrop-filter: blur(4px);
+}
+
+dialog {
+  width: min(92vw, 430px);
+  margin: auto;
+  padding: 2rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 22px 70px rgba(10, 18, 42, 0.28);
+  color: var(--navy);
+  text-align: center;
+}
+
+.modal-title {
+  margin-bottom: 1.4rem;
+}
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.banner.style1 {
+  min-height: 100svh;
+  background: var(--paper);
+}
+
+.banner.style1 .content {
+  width: 48%;
+  max-width: none;
+  margin: 0;
+  padding: clamp(5rem, 8vw, 9rem) clamp(3rem, 7vw, 8rem);
+}
+
+.banner.style1 .image {
+  width: 52%;
+}
+
+.banner .content h1 {
+  max-width: 9ch;
+  min-height: 2.04em;
+  margin-bottom: 1.35rem;
+  font-size: clamp(3.25rem, 5.4vw, 5.8rem);
+  line-height: 1.02;
+}
+
+#typed-greeting {
+  white-space: pre-line;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  animation: typewriter-cursor-blink 0.72s step-end infinite;
+}
+
+@keyframes typewriter-cursor-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.banner .content .major {
+  min-height: 2.25em;
+  margin-bottom: 2.1rem;
+  color: var(--clay);
+  font-family: "Gelasio", Georgia, serif;
+  font-size: clamp(1.08rem, 1.15vw, 1.34rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.banner .actions {
+  gap: 0;
+}
+
+.banner .actions.stacked li {
+  padding-top: 0.65rem;
+}
+
+.banner .button.big {
+  min-width: 15rem;
+}
+
+.banner.style1 .image img {
+  object-position: center 42%;
+}
+
+/* =========================================
+   ABOUT
+   ========================================= */
+
+#first {
+  align-items: stretch;
+}
+
+#first > .content {
+  width: 56%;
+  max-width: none;
+  align-self: center;
+  padding: clamp(4rem, 7vw, 7rem) clamp(3rem, 6vw, 7rem);
+}
+
+#first > .image {
+  width: 44%;
+  min-width: 0;
+  height: auto;
+  max-height: none;
+  align-self: stretch;
+}
+
+#first > .image img {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center 24%;
+}
+
+.about-content h2 {
+  max-width: 12ch;
+  margin-bottom: 1.25rem;
+  font-size: clamp(2.4rem, 4vw, 4.5rem);
+  line-height: 1.08;
+}
+
+.about-content > p:not(.section-kicker) {
+  max-width: 720px;
+  margin-bottom: 1.35rem;
+  font-size: clamp(1rem, 0.95rem + 0.15vw, 1.08rem);
+}
+
+.about-lead {
+  color: var(--clay) !important;
+  font-family: "Domine", Georgia, serif;
+  font-size: clamp(1.15rem, 1.5vw, 1.4rem) !important;
+  font-weight: 700;
+}
+
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.about-actions li {
+  padding: 0 !important;
+}
+
+/* =========================================
+   EDUCATION — CONNECTED EDITORIAL TIMELINE
+   ========================================= */
+
+#education {
+  padding: clamp(4rem, 5vw, 5.5rem) 2rem;
+  background: var(--paper);
+}
+
+.education-section {
+  --education-copy-offset: calc(76px + 24px + 2rem);
+  width: min(100%, var(--content-wide));
+  margin: 0 auto;
+}
+
+/* Align the section introduction with the degree-copy column. */
+.education-header-split {
+  display: block;
+  padding-left: var(--education-copy-offset);
+  margin-bottom: clamp(3rem, 4.5vw, 4.25rem);
+}
+
+.education-header-split .section-kicker {
+  margin: 0 0 0.65rem;
+}
+
+.education-header-split h2 {
+  max-width: none;
+  margin: 0;
+  font-size: clamp(2.4rem, 3.1vw, 3.35rem);
+  line-height: 1.08;
+  white-space: nowrap;
+}
+
+/*
+  One continuous line runs through the entire education journey.
+  The airplane is tilted; the line itself remains vertical.
+*/
+.education-timeline {
+  --year-col: 76px;
+  --marker-col: 24px;
+  --timeline-gap: 1rem;
+  --timeline-x: calc(
+    var(--year-col) + var(--timeline-gap) + (var(--marker-col) / 2)
+  );
+
+  position: relative;
+  width: 100%;
+}
+
+.education-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0.7rem;
+  bottom: 0.7rem;
+  left: var(--timeline-x);
+  width: 1px;
+  background: rgba(128, 78, 73, 0.48);
+  transform: translateX(-50%);
+}
+
+.education-institution-group {
+  display: block;
+}
+
+.education-timeline-content {
+  min-width: 0;
+}
+
+.education-milestone {
+  display: grid;
+  grid-template-columns:
+    var(--year-col)
+    var(--marker-col)
+    minmax(0, 1fr);
+  column-gap: var(--timeline-gap);
+  align-items: start;
+  position: relative;
+  padding-bottom: clamp(2.6rem, 5vw, 4.2rem);
+}
+
+.education-milestone:last-child,
+.education-milestone-last {
+  padding-bottom: 0;
+}
+
+.education-year {
+  padding-top: 0.08rem;
+  color: var(--clay);
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.45;
+  text-align: right;
+}
+
+.education-marker {
+  position: relative;
+  z-index: 2;
+  width: 12px;
+  height: 12px;
+  margin: 0.36rem auto 0;
+  background: var(--paper);
+  border: 2px solid var(--navy);
+  border-radius: 50%;
+}
+
+.education-degree-content {
+  max-width: 720px;
+  min-width: 0;
+}
+
+.education-degree {
+  margin: 0 0 0.15rem;
+  color: var(--navy);
+  font-family: "Domine", Georgia, serif;
+  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.education-degree i,
+.education-entry-logo {
+  width: 1.25rem;
+  margin-right: 0.45rem;
+}
+
+.education-entry-logo {
+  display: inline-block;
+  height: 1.25rem;
+  object-fit: contain;
+  vertical-align: -0.22rem;
+}
+
+.education-degree i {
+  color: var(--clay);
+  font-size: 0.92em;
+  text-align: center;
+}
+
+.education-degree-meta {
+  margin: 0 0 0.9rem;
+  color: rgba(10, 18, 42, 0.62);
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.education-degree-content h3 {
+  margin: 0 0 0.55rem;
+  color: var(--clay);
+  font-size: 1.02rem;
+  letter-spacing: -0.018em;
+  line-height: 1.4;
+}
+
+.education-degree-content > p:last-child {
+  max-width: 680px;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* Institution label on the right */
+.education-institution {
+  align-self: center;
+  justify-self: center;
+  width: min(100%, 280px);
+  text-align: center;
+}
+
+.education-institution-logo {
+  display: block;
+  width: clamp(200px, 20vw, 280px);
+  height: clamp(200px, 20vw, 280px);
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.education-institution p {
+  margin: 0;
+  color: rgba(10, 18, 42, 0.68);
+  font-family: "Gelasio", Georgia, serif;
+  font-size: 0.92rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.45;
+}
+
+/* Travel / academic transition between Dhaka and Texas Tech */
+.education-transition {
+  position: relative;
+  height: clamp(4.75rem, 8vw, 6.5rem);
+}
+
+/* The separate helper line is hidden because the timeline already owns
+   one continuous straight vertical line. */
+.education-transition-line {
+  display: none;
+}
+
+.education-plane {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: var(--timeline-x);
+  padding: 0.42rem 0.16rem;
+  background: var(--paper);
+  color: var(--clay);
+  font-size: 1rem;
+  transform: translate(-50%, -50%) rotate(-38deg);
+  transform-origin: center;
+}
+
+/* Graduation photograph concludes the education story.
+   Keep the original landscape composition instead of forcing a crop. */
+.education-commencement {
+  width: min(100%, 940px);
+  margin: clamp(4.5rem, 8vw, 7rem) auto 0;
+}
+
+.education-commencement-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  border-radius: var(--radius);
+}
+
+
+/* =========================================
+   RESPONSIVE PHOTOS
+   ========================================= */
+
+.site-photo {
+  display: block;
+  max-width: 100%;
+}
+
+/* Hero: the image always fills its half of the hero and crops smoothly. */
+.banner.style1 .image {
+  position: relative;
+  overflow: hidden;
+}
+
+.banner.style1 .image img,
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /*
+    The Colorado photo has a lot of landscape around the subject.
+    Keep the crop focused toward Tahmid instead of simply revealing more
+    scenery when the browser is zoomed out / viewport becomes very wide.
+  */
+  object-position: 68% 48%;
+  transform: scale(1.12);
+  transform-origin: 68% 54%;
+}
+
+/* About: the presentation image fills the entire image side of the section. */
+#first {
+  align-items: stretch;
+}
+
+#first > .content {
+  width: 56%;
+}
+
+#first > .image {
+  width: 44%;
+  max-width: none;
+  min-width: 0;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  margin: 0;
+  align-self: stretch;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+#first > .image img,
+.about-photo {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center 24%;
+}
+
+/* Documentary images preserve their original composition and scale fluidly. */
+.research-defense-photo,
+.education-commencement-photo {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.research-photo img,
+.research-defense-photo {
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+figcaption {
+  margin-top: 0.65rem;
+  color: rgba(10, 18, 42, 0.62);
+  font-family: "Gelasio", Georgia, serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: left;
+}
+
+/* =========================================
+   SECTION RHYTHM — COMPACT & CONGRUOUS
+   ========================================= */
+
+#education > .inner,
+#research > .inner,
+#skills > .inner,
+#experience > .inner,
+#impact > .inner {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#research,
+#skills,
+#experience,
+#impact {
+  padding-top: clamp(3.25rem, 4vw, 4.75rem);
+  padding-bottom: clamp(3.25rem, 4vw, 4.75rem);
+}
+
+#contact > .inner {
+  padding-top: clamp(3.25rem, 4vw, 4.5rem);
+  padding-bottom: clamp(2.75rem, 3.5vw, 4rem);
+}
+
+footer.wrapper > .inner {
+  padding-top: 2.5rem;
+  padding-bottom: 2rem;
+}
+
+/* =========================================
+   RESEARCH
+   ========================================= */
+
+#research {
+  padding: clamp(3.25rem, 4vw, 4.75rem) 2rem;
+}
+
+#research .research-section {
+  width: min(100%, var(--content-wide));
+  margin: 0 auto;
+}
+
+.research-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+  align-items: center;
+  gap: clamp(2.25rem, 5vw, 5rem);
+  margin-bottom: 3rem;
+}
+
+.research-header {
+  max-width: 620px;
+  margin: 0;
+  text-align: left;
+}
+
+.research-header h2 {
+  margin-bottom: 0.9rem;
+  font-size: clamp(2.4rem, 4vw, 4.2rem);
+}
+
+.research-header > p {
+  max-width: 600px;
+  margin: 0;
+  color: rgba(10, 18, 42, 0.72);
+  font-size: 1.08rem;
+  line-height: 1.72;
+}
+
+.research-photo {
+  margin: 0;
+}
+
+.research-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius);
+}
+
+
+.research-interests {
+  margin-bottom: 3rem;
+}
+
+.research-interests > h3 {
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.academic-work-section > h3 i {
+  margin-right: 0.45rem;
+  color: var(--clay);
+}
+
+.research-interest-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem clamp(1.4rem, 2.5vw, 2.5rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.research-interest-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+  color: var(--navy);
+}
+
+.research-interest-list i {
+  flex: 0 0 auto;
+  color: var(--clay);
+  font-size: 1rem;
+}
+
+.research-interest-list span {
+  color: var(--navy);
+  font-family: "Domine", Georgia, serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+@media screen and (min-width: 1100px) {
+  .research-interest-list {
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+}
+
+.academic-work-section {
+  max-width: 900px;
+  margin: 0 auto 2.6rem;
+  text-align: left;
+}
+
+.academic-work-section:last-child {
+  margin-bottom: 0;
+}
+
+.academic-work-section > h3 {
+  margin-bottom: 1.4rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid rgba(128, 78, 73, 0.42);
+  font-size: 1.3rem;
+  text-align: left;
+}
+
+.academic-citation-list {
+  text-align: left;
+}
+
+.academic-citation {
+  margin: 0 0 1.35rem;
+  font-family: "Gelasio", Georgia, serif;
+  padding-left: 1.25rem;
+  text-indent: -1.25rem;
+  font-size: 0.98rem;
+  font-weight: 400;
+  line-height: 1.75;
+  text-align: left;
+}
+
+.academic-citation strong {
+  font-weight: 700;
+}
+
+/* =========================================
+   SKILLS
+   ========================================= */
+
+#skills {
+  padding: clamp(3.25rem, 4vw, 4.75rem) 2rem;
+  background: var(--navy);
+  color: var(--paper);
+}
+
+#skills h2,
+#skills h3,
+#skills p,
+#skills span,
+#skills strong {
+  color: var(--paper);
+}
+
+#skills .section-kicker {
+  color: var(--sand) !important;
+}
+
+.skills-section {
+  width: min(100%, var(--content-wide));
+  margin: 0 auto;
+}
+
+.skills-header {
+  max-width: 760px;
+  margin-inline: 0;
+  margin-bottom: 2.4rem;
+  text-align: left;
+}
+
+.skills-header h2 {
+  margin-bottom: 0.65rem;
+  font-size: clamp(2.4rem, 4vw, 4rem);
+}
+
+.skills-header > p:not(.section-kicker) {
+  color: rgba(251, 250, 248, 0.72) !important;
+}
+
+.skills-category {
+  margin-bottom: 2.25rem;
+}
+
+.skills-category:last-child {
+  margin-bottom: 0;
+}
+
+.skills-category h3 {
+  margin-bottom: 1.2rem;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 1.05rem;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.skills-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.data-analysis-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.skill-card {
+  min-height: 96px;
+  padding: 1.15rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(251, 250, 248, 0.035);
+  border: 1px solid var(--line-light);
+  border-radius: 10px;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 0.98rem;
+  font-weight: 700;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-2px);
+  background: rgba(128, 78, 73, 0.18);
+  border-color: rgba(231, 222, 205, 0.6);
+}
+
+.skill-card > i {
+  flex: 0 0 38px;
+  width: 38px;
+  color: var(--sand);
+  font-size: 1.75rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.skill-card-image {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.88;
+}
+
+.skill-card span {
+  line-height: 1.25;
+  text-align: left;
+}
+
+/* =========================================
+   CORE COMPETENCIES
+   ========================================= */
+
+#competencies {
+  padding: clamp(2.25rem, 3vw, 3rem) 2rem;
+  background: var(--sand);
+}
+
+.competencies-inner {
+  width: min(100%, var(--content-wide));
+  margin: 0 auto;
+}
+
+.competencies-inner h2 {
+  margin-bottom: 1.25rem;
+  font-size: clamp(1.9rem, 2.7vw, 2.7rem);
+}
+
+.competencies-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.competencies-grid li {
+  display: flex;
+  min-width: 0;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.7rem 0.9rem;
+  background: rgba(251, 250, 248, 0.42);
+  border: 1px solid rgba(10, 18, 42, 0.18);
+  border-radius: 8px;
+  color: var(--navy);
+  font-family: "Gelasio", Georgia, serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+  text-align: center;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.competencies-grid li > i {
+  flex: 0 0 1rem;
+  width: 1rem;
+  color: var(--clay);
+  font-size: 0.85rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.competencies-grid li > span {
+  min-width: 0;
+  text-align: center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .competencies-grid li:hover {
+    transform: translateY(-1px);
+    background: rgba(251, 250, 248, 0.68);
+    border-color: rgba(128, 78, 73, 0.48);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .competencies-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 520px) {
+  #competencies {
+    padding: 2rem 1.25rem;
+  }
+
+  .competencies-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   EXPERIENCE — CONNECTED TIMELINE
+   ========================================= */
+
+#experience {
+  padding: clamp(3.25rem, 4vw, 4.75rem) 2rem;
+}
+
+.experience-inner {
+  --experience-copy-offset: calc(88px + 24px + 2rem);
+  width: min(100%, 1080px);
+  margin: 0 auto;
+}
+
+.experience-header-split {
+  display: block;
+  padding-left: var(--experience-copy-offset);
+  margin-bottom: clamp(2.5rem, 3.5vw, 3.25rem);
+}
+
+.experience-header-split .section-kicker {
+  margin: 0 0 0.65rem;
+}
+
+.experience-header-split h2 {
+  max-width: 17ch;
+  margin: 0 0 0.65rem;
+  font-size: clamp(2.35rem, 3.6vw, 3.75rem);
+  line-height: 1.08;
+}
+
+.experience-header-split > div > p {
+  max-width: 660px;
+  margin: 0;
+  color: rgba(10, 18, 42, 0.7);
+}
+
+.experience-timeline {
+  --experience-year-col: 88px;
+  --experience-marker-col: 24px;
+  --experience-gap: 1rem;
+  --experience-line-x: calc(
+    var(--experience-year-col) + var(--experience-gap) +
+      (var(--experience-marker-col) / 2)
+  );
+
+  position: relative;
+}
+
+.experience-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0.65rem;
+  bottom: 0.65rem;
+  left: var(--experience-line-x);
+  width: 1px;
+  background: rgba(128, 78, 73, 0.48);
+  transform: translateX(-50%);
+}
+
+.experience-milestone {
+  display: grid;
+  grid-template-columns:
+    var(--experience-year-col)
+    var(--experience-marker-col)
+    minmax(0, 1fr);
+  column-gap: var(--experience-gap);
+  position: relative;
+  padding-bottom: clamp(2.3rem, 3.5vw, 3.25rem);
+}
+
+.experience-milestone-last {
+  padding-bottom: 0;
+}
+
+.experience-year {
+  padding-top: 0.08rem;
+  color: var(--clay);
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.45;
+  text-align: right;
+}
+
+.experience-marker {
+  position: relative;
+  z-index: 2;
+  width: 12px;
+  height: 12px;
+  margin: 0.36rem auto 0;
+  background: var(--paper);
+  border: 2px solid var(--navy);
+  border-radius: 50%;
+}
+
+.experience-content {
+  max-width: 760px;
+  min-width: 0;
+}
+
+.experience-role-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.experience-role-heading > i {
+  flex: 0 0 1.25rem;
+  width: 1.25rem;
+  margin-top: 0.25rem;
+  color: var(--clay);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.experience-role-heading h3 {
+  margin: 0 0 0.18rem;
+  color: var(--navy);
+  font-size: 1.22rem;
+  letter-spacing: -0.025em;
+  line-height: 1.35;
+}
+
+.experience-meta {
+  margin: 0;
+  color: rgba(10, 18, 42, 0.64);
+  font-family: "Gelasio", Georgia, serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.experience-story {
+  max-width: 680px;
+  margin: 0 0 0 2.05rem;
+  text-align: left;
+}
+
+.experience-story h4 {
+  margin: 0 0 0.55rem;
+  color: var(--clay);
+  font-size: 1.03rem;
+  letter-spacing: -0.018em;
+  line-height: 1.4;
+}
+
+.experience-story p {
+  margin: 0;
+  line-height: 1.72;
+}
+
+/* =========================================
+   IMPACT IN NUMBERS
+   ========================================= */
+
+#impact {
+  padding: clamp(3.25rem, 4vw, 4.75rem) 2rem;
+  background: var(--clay);
+  color: var(--paper);
+}
+
+.impact-inner {
+  width: min(100%, var(--content-wide));
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.impact-header {
+  max-width: 900px;
+  margin-inline: auto;
+  margin-bottom: 1.75rem;
+  text-align: center;
+}
+
+#impact .section-kicker {
+  margin-inline: auto;
+  color: var(--sand) !important;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  text-align: center;
+}
+
+.impact-header h2 {
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--paper);
+  font-family: "Domine", Georgia, serif;
+  font-size: clamp(2.2rem, 3.8vw, 3.8rem);
+  line-height: 1.1;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.impact-stat {
+  min-width: 0;
+  min-height: 190px;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(10, 18, 42, 0.12);
+  border: 1px solid rgba(251, 250, 248, 0.2);
+  border-radius: var(--radius);
+  text-align: left;
+}
+
+.impact-number {
+  display: block;
+  color: var(--paper) !important;
+  font-family: "Domine", Georgia, serif;
+  font-size: clamp(2.6rem, 4vw, 4.25rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.impact-stat span {
+  max-width: 16ch;
+  color: var(--sand);
+  font-family: "Gelasio", Georgia, serif;
+  font-size: 0.93rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+/* =========================================
+   GALLERY
+   ========================================= */
+
+#gallery {
+  padding: clamp(2.75rem, 4vw, 4rem) 2rem;
+}
+
+#gallery > .inner {
+  width: min(100%, var(--content-wide));
+  margin: 0 auto;
+  padding: 0;
+}
+
+.gallery-header {
+  margin-bottom: 1.25rem;
+}
+
+.gallery-header h2 {
+  margin-bottom: 0.4rem;
+  font-size: clamp(2rem, 3vw, 3rem);
+  text-align: center;
+}
+
+.gallery-header p {
+  margin: 0;
+  color: rgba(10, 18, 42, 0.68);
+  font-size: 0.98rem;
+  text-align: center;
+}
+
+.gallery-strip {
+  display: flex;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0 0 0.7rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  list-style: none;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+  scrollbar-color: rgba(128, 78, 73, 0.62) rgba(10, 18, 42, 0.08);
+  scrollbar-width: thin;
+  overscroll-behavior-inline: contain;
+  touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gallery-strip::-webkit-scrollbar {
+  height: 7px;
+}
+
+.gallery-strip::-webkit-scrollbar-track {
+  background: rgba(10, 18, 42, 0.08);
+}
+
+.gallery-strip::-webkit-scrollbar-thumb {
+  background: rgba(128, 78, 73, 0.62);
+  border-radius: 7px;
+}
+
+.gallery-item {
+  flex: 0 0 clamp(180px, 18vw, 220px);
+  min-width: 0;
+  padding: 0;
+  scroll-snap-align: start;
+}
+
+.gallery-item figure {
+  margin: 0;
+}
+
+.gallery-trigger {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  padding: 0;
+  overflow: hidden;
+  appearance: none;
+  background: transparent;
+  border: 1px solid rgba(10, 18, 42, 0.24) !important;
+  border-radius: 8px;
+  box-shadow: none;
+  cursor: pointer;
+  line-height: 0;
+  transform: none;
+}
+
+.gallery-trigger:hover {
+  border-color: rgba(10, 18, 42, 0.42) !important;
+  transform: none;
+}
+
+.gallery-trigger img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1);
+  transition: transform 0.22s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .gallery-trigger:hover img {
+    transform: scale(1.025);
+  }
+}
+
+.gallery-item figcaption {
+  margin-top: 0.4rem;
+  color: rgba(10, 18, 42, 0.68);
+  font-size: 0.82rem;
+  line-height: 1.25;
+  text-align: center;
+}
+
+body.gallery-lightbox-open {
+  overflow: hidden;
+}
+
+dialog.gallery-lightbox {
+  width: min(94vw, 1200px);
+  max-width: none;
+  max-height: 94svh;
+  padding: 3rem;
+  overflow: visible;
+  background: var(--paper);
+  border: 1px solid rgba(10, 18, 42, 0.24);
+  border-radius: var(--radius);
+  box-shadow: none;
+}
+
+.gallery-lightbox-panel {
+  display: grid;
+  place-items: center;
+}
+
+.gallery-lightbox-image {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(94svh - 6rem);
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.gallery-lightbox-close {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.55rem;
+  z-index: 2;
+  display: grid;
+  width: 2.5rem;
+  min-width: 2.5rem;
+  max-width: none;
+  height: 2.5rem;
+  padding: 0;
+  place-items: center;
+  background: var(--navy) !important;
+  border: 1px solid var(--navy) !important;
+  border-radius: 4px;
+  color: var(--paper) !important;
+  line-height: 1;
+}
+
+.gallery-lightbox-close:hover {
+  background: var(--clay) !important;
+  border-color: var(--clay) !important;
+  color: var(--paper) !important;
+  transform: none;
+}
+
+/* =========================================
+   CONTACT
+   ========================================= */
+
+#contact .inner {
+  width: min(100%, 760px);
+}
+
+#contact h2 {
+  font-size: clamp(2.2rem, 3.5vw, 3.6rem);
+}
+
+.contact-form-status {
+  margin: 1rem 0 0;
+  color: var(--navy);
+  font-family: "Gelasio", Georgia, serif;
+  line-height: 1.5;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  background: rgba(231, 222, 205, 0.32) !important;
+  border-color: rgba(10, 18, 42, 0.42) !important;
+  color: var(--navy) !important;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--clay) !important;
+  box-shadow: 0 0 0 1px var(--clay) !important;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer.wrapper {
+  background: var(--navy);
+  color: rgba(251, 250, 248, 0.78);
+}
+
+footer.wrapper p,
+footer.wrapper span {
+  color: rgba(251, 250, 248, 0.78);
+}
+
+footer.wrapper > .inner > p {
+  font-family: "Gelasio", Georgia, serif;
+}
+
+footer.wrapper a,
+footer.wrapper .icon,
+footer.wrapper .social-placeholder {
+  color: var(--sand) !important;
+}
+
+footer.wrapper a:hover,
+footer.wrapper .icon:hover {
+  color: var(--paper) !important;
+}
+
+/* =========================================
+   RESPONSIVE — TABLET
+   ========================================= */
+
+@media screen and (max-width: 1100px) {
+  .education-timeline-content,
+  .education-degree-content,
+  .research-intro-grid > *,
+  .skill-card,
+  .experience-content,
+  .impact-stat {
+    min-width: 0;
+  }
+
+  .banner.style1 .content {
+    width: 52%;
+    padding: 5rem 3.5rem;
+  }
+
+  .banner.style1 .image {
+    width: 48%;
+  }
+
+  #first > .content {
+    width: 58%;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
+  #first > .image {
+    width: 42%;
+    max-width: none;
+    height: auto;
+    min-height: 0;
+  }
+
+  .education-institution-group {
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 2.5rem;
+  }
+
+  .research-intro-grid {
+    grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+    gap: 2.5rem;
+  }
+
+  .research-interest-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .skills-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .impact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Match the base theme's portrait reflow without retaining desktop widths. */
+@media screen and (max-width: 1100px) and (orientation: portrait) {
+  .banner.style1,
+  #first {
+    flex-direction: column !important;
+  }
+
+  .banner.style1 {
+    min-height: auto;
+  }
+
+  .banner.style1 .content,
+  #first > .content {
+    width: 100%;
+    max-width: none;
+    padding: 4.5rem 2.5rem;
+  }
+
+  .banner.style1 .image,
+  #first > .image {
+    width: 100%;
+    max-width: none;
+  }
+
+  .banner.style1 .image {
+    height: min(58vw, 560px);
+    min-height: 360px;
+    max-height: 560px;
+  }
+
+  #first > .image {
+    height: clamp(380px, 62vw, 640px);
+    min-height: 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .gallery-item {
+    flex-basis: clamp(180px, 28vw, 220px);
+  }
+
+  .banner.style1,
+  #first {
+    flex-direction: column !important;
+  }
+
+  .banner.style1 {
+    min-height: auto;
+  }
+
+  .banner.style1 .content,
+  #first > .content {
+    width: 100%;
+    max-width: none;
+    padding: 4.5rem 2.5rem;
+  }
+
+  .banner.style1 .image {
+    width: 100%;
+    min-width: 0;
+    height: min(58vw, 560px);
+    min-height: 360px;
+    max-height: 560px;
+  }
+
+  #first > .image {
+    width: 100%;
+    max-width: none;
+    height: clamp(380px, 62vw, 640px);
+    min-height: 0;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  #first > .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 24%;
+  }
+
+  .banner.style1 .content {
+    min-height: auto !important;
+  }
+
+  .banner .content h1 {
+    max-width: 10ch;
+    font-size: clamp(3.1rem, 7.5vw, 4.8rem);
+  }
+
+  .about-content h2 {
+    max-width: 18ch;
+  }
+
+  .education-header-split {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 0.65rem;
+  }
+
+  .education-header-split .section-kicker {
+    margin-top: 0;
+  }
+
+  .education-header-split h2 {
+    max-width: 18ch;
+    white-space: normal;
+  }
+
+  .education-institution-group {
+    grid-template-columns: minmax(0, 1fr) 200px;
+    gap: 2rem;
+  }
+
+  .research-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2.75rem;
+  }
+
+  .research-header {
+    max-width: 720px;
+  }
+
+  .research-photo {
+    max-width: 760px;
+  }
+
+  .experience-header-split {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .experience-header-split .section-kicker {
+    margin-top: 0;
+  }
+
+  .experience-header-split h2 {
+    max-width: 18ch;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — MOBILE
+   ========================================= */
+
+
+/*
+  Browser zoom-out behaves like a wider CSS viewport. Increase the focal crop
+  progressively on wide/ultra-wide viewports so the subject does not shrink
+  into the scenery.
+*/
+@media screen and (min-width: 1600px) {
+  .banner.style1 .image img,
+  .hero-photo {
+    transform: scale(1.2);
+  }
+}
+
+@media screen and (min-width: 2200px) {
+  .banner.style1 .image img,
+  .hero-photo {
+    transform: scale(1.3);
+  }
+}
+
+@media screen and (min-width: 3000px) {
+  .banner.style1 .image img,
+  .hero-photo {
+    transform: scale(1.42);
+  }
+}
+
+/* Tablet: keep a modest crop rather than showing the entire landscape. */
+@media screen and (max-width: 900px) {
+  .banner.style1 .image img,
+  .hero-photo {
+    object-position: 66% 48%;
+    transform: scale(1.08);
+    transform-origin: 66% 52%;
+  }
+}
+
+/* Phone: use a lighter crop because the image itself becomes full-width. */
+@media screen and (max-width: 520px) {
+  .banner.style1 .image img,
+  .hero-photo {
+    object-position: 64% 48%;
+    transform: scale(1.04);
+  }
+}
+
+@media screen and (max-width: 736px) {
+  dialog {
+    max-height: calc(100svh - 2rem);
+    padding: 1.5rem;
+    overflow-y: auto;
+  }
+
+  #external-nav {
+    top: 0.85rem;
+    right: 1rem;
+    gap: 0.38rem;
+    padding: 0;
+  }
+
+  #external-nav a {
+    width: 1.85rem;
+    height: 1.85rem;
+    font-size: 0.94rem;
+  }
+
+  .banner.style1 .content,
+  #first > .content {
+    padding: 4rem 1.5rem 3rem;
+  }
+
+  .banner.style1 .image {
+    height: 52vh;
+    min-height: 300px;
+    max-height: 460px;
+  }
+
+  #first > .image {
+    width: 100%;
+    height: clamp(320px, 85vw, 520px);
+    margin: 0;
+  }
+
+  .banner .content h1 {
+    font-size: clamp(2.8rem, 12.5vw, 4rem);
+  }
+
+  .banner .content .major {
+    min-height: 2.8em;
+    font-size: 1.05rem;
+  }
+
+  .banner .button.big,
+  .about-actions .button,
+  .about-actions button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .about-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .experience-role-heading > div,
+  #contact .fields,
+  #contact .field,
+  #contact input,
+  #contact textarea {
+    min-width: 0;
+  }
+
+  .academic-citation,
+  .experience-meta,
+  .skill-card span {
+    overflow-wrap: anywhere;
+  }
+
+  #education {
+    padding: 3.75rem 1.25rem;
+  }
+
+  .education-section {
+    --education-copy-offset: calc(54px + 20px + 1.4rem);
+  }
+
+  .education-header-split {
+    margin-bottom: 3.25rem;
+  }
+
+  .education-header-split h2 {
+    font-size: clamp(2.25rem, 9vw, 3.3rem);
+  }
+
+  .education-institution-group {
+    display: block;
+  }
+
+  .education-timeline {
+    --year-col: 54px;
+    --marker-col: 20px;
+    --timeline-gap: 0.7rem;
+  }
+
+  .education-year {
+    font-size: 0.74rem;
+  }
+
+  .education-marker {
+    width: 10px;
+    height: 10px;
+    margin-top: 0.4rem;
+  }
+
+  .education-degree {
+    font-size: 1.13rem;
+  }
+
+  .education-degree-content > p:last-child {
+    font-size: 0.98rem;
+  }
+
+  .education-transition {
+    height: 4.5rem;
+  }
+
+  .education-plane {
+    font-size: 0.92rem;
+  }
+
+  .education-commencement {
+    margin-top: 4rem;
+  }
+
+  .education-commencement-photo {
+    border-radius: 10px;
+  }
+
+  #research,
+  #skills,
+  #experience,
+  #impact,
+  #gallery {
+    padding: 3.25rem 1.25rem;
+  }
+
+  .research-header {
+    margin-bottom: 0;
+  }
+
+  .experience-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .research-intro-grid {
+    margin-bottom: 2.5rem;
+  }
+
+  .research-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .research-interests {
+    margin-bottom: 2.75rem;
+  }
+
+  .research-interest-list {
+    gap: 0.85rem 1.35rem;
+  }
+
+  .research-interest-list li {
+    flex: 0 1 auto;
+  }
+
+  .experience-header-split {
+    margin-bottom: 2.5rem;
+  }
+
+  .experience-timeline {
+    --experience-year-col: 60px;
+    --experience-marker-col: 20px;
+    --experience-gap: 0.7rem;
+  }
+
+  .experience-inner {
+    --experience-copy-offset: calc(60px + 20px + 1.4rem);
+  }
+
+  .experience-year {
+    font-size: 0.72rem;
+  }
+
+  .experience-marker {
+    width: 10px;
+    height: 10px;
+    margin-top: 0.4rem;
+  }
+
+  .experience-story {
+    margin-left: 0;
+  }
+
+  .experience-role-heading {
+    gap: 0.65rem;
+  }
+
+  .academic-citation {
+    padding-left: 0.9rem;
+    text-indent: -0.9rem;
+    font-size: 0.94rem;
+  }
+
+  .skills-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .impact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .impact-stat {
+    min-height: 160px;
+    padding: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 900px) and (max-height: 600px) and (orientation: landscape) {
+  .banner.style1 .image {
+    height: 55svh;
+    min-height: 280px;
+  }
+
+  #first > .image {
+    height: min(70svh, 420px);
+    min-height: 280px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .gallery-item {
+    flex-basis: clamp(160px, 58vw, 230px);
+  }
+
+  dialog.gallery-lightbox {
+    width: calc(100vw - 1rem);
+    max-height: calc(100svh - 1rem);
+    padding: 2.75rem 0.75rem 0.75rem;
+  }
+
+  .gallery-lightbox-image {
+    max-height: calc(100svh - 4.5rem);
+  }
+
+  .skills-card-grid,
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .research-interest-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  .research-interest-list li {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .impact-stat {
+    min-height: 125px;
+  }
+
+  .skill-card {
+    min-height: 82px;
+  }
+
+  .impact-stat span {
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .education-section {
+    --education-copy-offset: calc(46px + 18px + 1.1rem);
+  }
+
+  .education-timeline {
+    --year-col: 46px;
+    --marker-col: 18px;
+    --timeline-gap: 0.55rem;
+  }
+
+  .education-year {
+    font-size: 0.68rem;
+  }
+
+  .education-degree-meta {
+    font-size: 0.78rem;
+  }
+
+  .education-degree-content h3 {
+    font-size: 0.98rem;
+  }
+
+  .education-institution-logo {
+    flex-basis: 144px;
+    width: 144px;
+    height: 144px;
+  }
+
+  .experience-timeline {
+    --experience-year-col: 52px;
+    --experience-marker-col: 18px;
+    --experience-gap: 0.55rem;
+  }
+
+  .experience-inner {
+    --experience-copy-offset: calc(52px + 18px + 1.1rem);
+  }
+
+  .experience-year {
+    font-size: 0.68rem;
+  }
+
+  .experience-role-heading h3 {
+    font-size: 1.08rem;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #contact > .inner {
+    padding-top: 3.25rem;
+    padding-bottom: 2.5rem;
+  }
+
+  footer.wrapper > .inner {
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .typed-cursor,
+  .typewriter-cursor {
+    display: none !important;
+  }
+
+  .is-inactive,
+  .is-inactive > .image img,
+  [class*="fade-in"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .gallery-strip {
+    scroll-behavior: auto;
+  }
+
+  .gallery-trigger img {
+    transform: none !important;
+  }
+}
+
+@media (forced-colors: active) {
+  :where(a, button, input, select, textarea, [tabindex]):focus-visible {
+    outline: 3px solid CanvasText !important;
+    box-shadow: none !important;
+  }
+}

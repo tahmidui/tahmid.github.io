@@ -1,0 +1,1397 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <link rel="icon" href="favicon.png" type="image/png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+    />
+
+    <title>Tahmid Ul Islam</title>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="theme-color" content="#0A122A" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <link rel="stylesheet" href="assets/css/custom.css" />
+
+    <noscript>
+      <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+  </head>
+
+  <body class="is-preload">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <nav id="external-nav" aria-label="Social links">
+      <span
+        class="icon brands fa-github social-placeholder"
+        aria-hidden="true"
+        title="GitHub link unavailable"
+      ></span>
+
+      <a
+        href="https://www.linkedin.com/in/tahmidui/"
+        class="icon brands fa-linkedin-in"
+        title="LinkedIn"
+        ><span class="label">LinkedIn</span></a
+      >
+
+      <span
+        class="icon brands fa-orcid social-placeholder"
+        aria-hidden="true"
+        title="ORCID link unavailable"
+      ></span>
+
+      <span
+        class="icon brands fa-google social-placeholder"
+        aria-hidden="true"
+        title="Google Scholar link unavailable"
+      ></span>
+    </nav>
+
+    <dialog id="cv-modal" aria-labelledby="cv-modal-title">
+      <p class="modal-title" id="cv-modal-title">Select Document</p>
+
+      <ul class="actions stacked">
+        <li>
+          <a href="academic_cv.pdf" download class="button primary fit"
+            >Academic CV (PDF)</a
+          >
+        </li>
+
+        <li>
+          <a href="industry_resume.pdf" download class="button primary fit"
+            >Industry Resume (PDF)</a
+          >
+        </li>
+
+        <li>
+          <button
+            type="button"
+            id="cv-modal-close"
+            class="button small alt fit"
+          >
+            Close
+          </button>
+        </li>
+      </ul>
+    </dialog>
+
+    <dialog
+      id="gallery-lightbox"
+      class="gallery-lightbox"
+      aria-labelledby="gallery-lightbox-title"
+    >
+      <div class="gallery-lightbox-panel">
+        <h2 class="sr-only" id="gallery-lightbox-title">Selected photo</h2>
+        <button
+          type="button"
+          class="gallery-lightbox-close"
+          aria-label="Close photo"
+        >
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <img class="gallery-lightbox-image" alt="" />
+      </div>
+    </dialog>
+
+    <main id="main-content" tabindex="-1">
+      <div id="wrapper" class="divided">
+        <section
+          class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right"
+          aria-labelledby="hero-title"
+        >
+          <div class="content">
+            <h1 id="hero-title">
+              <span id="typed-greeting" aria-hidden="true"
+                >Hi<br />I am Tahmid</span
+              >
+              <span class="sr-only">Hi, I am Tahmid</span>
+            </h1>
+
+            <p class="major">
+              <span id="typed-role" aria-hidden="true"
+                >I am a quantitative social scientist</span
+              >
+              <span class="sr-only"
+                >Quantitative social scientist, data scientist, sociologist, and
+                writer.</span
+              >
+            </p>
+
+            <ul class="actions stacked">
+              <li>
+                <a href="#first" class="button big wide">Learn more about me</a>
+              </li>
+
+              <li>
+                <a
+                  href="https://github.com/"
+                  class="button big wide"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >View my work<span class="sr-only">
+                    (opens in a new tab)</span
+                  ></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="image">
+            <img
+              src="images/banner.jpeg"
+              alt="Tahmid Ul Islam seated at a mountain overlook in Colorado"
+              class="site-photo hero-photo"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </div>
+        </section>
+
+        <section
+          class="spotlight style1 orient-right content-align-left image-position-left onscroll-image-fade-in"
+          id="first"
+          aria-labelledby="about-title"
+        >
+          <div class="content about-content">
+            <p class="section-kicker">About</p>
+            <h2 id="about-title">Social questions, explored with data</h2>
+            <p class="about-lead">
+              Doing social research is my way of giving back to the world.
+            </p>
+            <p>
+              I am a sociologist and Master of Science student in Data Science
+              at Texas Tech University. I use quantitative research, survey
+              data, and computational methods to understand how beliefs, social
+              conditions, and culture shape well-being.
+            </p>
+            <p>
+              My MA thesis examined religion and subjective well-being using
+              World Values Survey. I am now expanding my toolkit in Python, R,
+              SQL, statistical modeling, data management, and machine learning
+              while continuing to explore social questions through data.
+            </p>
+            <p>
+              Teaching is also central to my work. I have taught and mentored
+              students in various settings and developed large-scale digital
+              learning content in sociology.
+            </p>
+
+            <ul class="actions about-actions">
+              <li>
+                <button
+                  type="button"
+                  id="cv-modal-open"
+                  aria-haspopup="dialog"
+                  aria-controls="cv-modal"
+                  class="button primary"
+                >
+                  Download CV / Resume
+                </button>
+              </li>
+              <li>
+                <a href="#research" class="button alt">Explore my research</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="image">
+            <img
+              src="images/presentation-3mt.jpg"
+              alt="Tahmid Ul Islam presenting at an academic event"
+              class="site-photo about-photo"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </section>
+
+        <section
+          class="wrapper style1"
+          id="education"
+          aria-labelledby="education-title"
+        >
+          <div class="inner education-section">
+            <header class="education-header education-header-split">
+              <p class="section-kicker">Education</p>
+              <h2 id="education-title">From Sociology to Data Science</h2>
+            </header>
+
+            <div class="education-timeline" aria-label="Education timeline">
+              <!-- Texas Tech University group -->
+              <div class="education-institution-group">
+                <div class="education-timeline-content">
+                  <article class="education-milestone">
+                    <div class="education-year" aria-hidden="true">2027</div>
+                    <div class="education-marker" aria-hidden="true"></div>
+                    <div class="education-degree-content">
+                      <p class="education-degree">
+                        <img
+                          src="icons/ttu-logo.webp"
+                          alt=""
+                          class="education-entry-logo"
+                          aria-hidden="true"
+                        />
+                        Master of Science in Data Science
+                      </p>
+                      <p class="education-degree-meta">
+                        Texas Tech University · expected 2027
+                      </p>
+                      <h3>Expanding into Data Science</h3>
+                      <p>
+                        I am building on my social research background through
+                        data science, developing practical skills in
+                        programming, databases, statistical modeling, machine
+                        learning, and computational analysis. This training is
+                        expanding my ability to work systematically with complex
+                        data and apply computational methods to real-world
+                        analytical problems.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="education-milestone">
+                    <div class="education-year" aria-hidden="true">2026</div>
+                    <div class="education-marker" aria-hidden="true"></div>
+                    <div class="education-degree-content">
+                      <p class="education-degree">
+                        <img
+                          src="icons/ttu-logo.webp"
+                          alt=""
+                          class="education-entry-logo"
+                          aria-hidden="true"
+                        />
+                        Master of Arts in Sociology
+                      </p>
+                      <p class="education-degree-meta">
+                        Texas Tech University · 2026
+                      </p>
+                      <h3>Becoming a Quantitative Researcher</h3>
+                      <p>
+                        My Master of Arts in Sociology marked a transition from
+                        studying sociological ideas to conducting hands-on
+                        empirical research. My master<span
+                          class="editorial-possessive"
+                          >’s</span
+                        >
+                        thesis examined religion and subjective well-being using
+                        large-scale survey data, strengthening my experience in
+                        research design, quantitative analysis, statistical
+                        methods, and survey research.
+                      </p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Geographic and academic transition -->
+              <div
+                class="education-transition"
+                role="img"
+                aria-label="Transition from University of Dhaka to Texas Tech University"
+              >
+                <span
+                  class="education-transition-line"
+                  aria-hidden="true"
+                ></span>
+                <i
+                  class="fa-solid fa-plane education-plane"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <!-- University of Dhaka group -->
+              <div class="education-institution-group">
+                <div class="education-timeline-content">
+                  <article class="education-milestone">
+                    <div class="education-year" aria-hidden="true">2024</div>
+                    <div class="education-marker" aria-hidden="true"></div>
+                    <div class="education-degree-content">
+                      <p class="education-degree">
+                        <img
+                          src="icons/du-logo.svg"
+                          alt=""
+                          class="education-entry-logo"
+                          aria-hidden="true"
+                        />
+                        Master of Social Sciences in Sociology
+                      </p>
+                      <p class="education-degree-meta">
+                        University of Dhaka · 2024
+                      </p>
+                      <h3>Deepening Sociological Inquiry</h3>
+                      <p>
+                        My graduate study at the University of Dhaka deepened my
+                        training in sociological theory, research methodology,
+                        health and illness, social gerontology, population, and
+                        development. It also strengthened my interest in
+                        quantitative research and the social conditions that
+                        shape people<span class="editorial-possessive">’s</span>
+                        well-being.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="education-milestone education-milestone-last">
+                    <div class="education-year" aria-hidden="true">2023</div>
+                    <div class="education-marker" aria-hidden="true"></div>
+                    <div class="education-degree-content">
+                      <p class="education-degree">
+                        <img
+                          src="icons/du-logo.svg"
+                          alt=""
+                          class="education-entry-logo"
+                          aria-hidden="true"
+                        />
+                        Bachelor of Social Sciences in Sociology
+                      </p>
+                      <p class="education-degree-meta">
+                        University of Dhaka · 2023
+                      </p>
+                      <h3>Building a Foundation in Sociology</h3>
+                      <p>
+                        My academic journey in Sociology began at the University
+                        of Dhaka, where I developed a broad foundation in social
+                        theory, research methods, health, population, religion,
+                        culture, and social change. These years shaped my
+                        interest in understanding how social conditions,
+                        institutions, and human behavior influence people<span
+                          class="editorial-possessive"
+                          >’s</span
+                        >
+                        lives.
+                      </p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+
+            <figure class="education-commencement">
+              <img
+                src="images/ttu-ma-commence.jpg"
+                alt="Tahmid Ul Islam at his Master of Arts commencement at Texas Tech University"
+                class="site-photo education-commencement-photo"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                Master of Arts Commencement · Texas Tech University, 2026
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section
+          class="wrapper style1"
+          id="research"
+          aria-labelledby="research-title"
+        >
+          <div class="inner research-section">
+            <div class="research-intro-grid">
+              <header class="research-header">
+                <h2 id="research-title">Research</h2>
+                <p>
+                  My research examines how religion, culture, disability, and
+                  social conditions shape well-being.
+                </p>
+              </header>
+
+              <figure class="research-photo">
+                <img
+                  src="images/ma-thesis-defense.jpg"
+                  alt="Tahmid Ul Islam with his Master of Arts thesis committee after his thesis defense"
+                  class="site-photo research-defense-photo"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>
+                  Master of Arts thesis defense, Texas Tech University.
+                </figcaption>
+              </figure>
+            </div>
+
+            <!-- Research Interests -->
+            <div class="research-interests">
+              <h3>I am interested in</h3>
+
+              <ul
+                class="research-interest-list"
+                aria-label="Research interests"
+              >
+                <li>
+                  <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+                  <span>Well-Being</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-hands-praying" aria-hidden="true"></i>
+                  <span>Religion</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-earth-americas" aria-hidden="true"></i>
+                  <span>Culture</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-wheelchair-move" aria-hidden="true"></i>
+                  <span>Disability</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                  <span>Quantitative &amp; Computational Methods</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Manuscript -->
+            <div class="academic-work-section">
+              <h3>
+                <i class="fa-solid fa-file-pen" aria-hidden="true"></i>
+                Manuscript in Preparation
+              </h3>
+
+              <div class="academic-citation-list">
+                <p class="academic-citation">
+                  <strong>Islam, Tahmid Ul.</strong> Religion and Subjective
+                  Well-Being: Comparing the Influence of Religious Beliefs and
+                  Practices.
+                  <em>Manuscript in preparation.</em>
+                </p>
+              </div>
+            </div>
+
+            <!-- Publications -->
+            <div class="academic-work-section">
+              <h3>
+                <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                Publications
+              </h3>
+
+              <div class="academic-citation-list">
+                <p class="academic-citation">
+                  Akter, Kazi Mahmuda, Tanjum Tushi, Sabrina Jahan Mily,
+                  Rashenda Aziz Mohona, Samin Anis, Adittya Kishor Chakraborty,
+                  Elmee Tabassum, <strong>Tahmid Ul Islam</strong>, Ozifatun
+                  Jannat Akhi, Israt Sultana Nishe, Badrun Nahar Laxy, Sanjida
+                  Sultana Zerin, Abdiqani Jama Roble, Md. Imran Hossain, Sharmin
+                  Ahmed, and Salauddin Al Azad. 2020. “RT-PCR Mediated
+                  Identification of SARS-CoV-2 Patients from Particular Regions
+                  of Bangladesh and the Multi-factorial Analysis Considering
+                  Their Pre and Post Infection Health Conditions.”
+                  <em>Biotechnology Journal International</em> <em>24</em>(6):
+                  43–56.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="wrapper style1 invert"
+          id="skills"
+          aria-labelledby="skills-title"
+        >
+          <div class="inner skills-section">
+            <header class="skills-header">
+              <p class="section-kicker">Technical Skills</p>
+              <h2 id="skills-title">Tools I work with</h2>
+
+              <p>
+                Technologies I use for research, data analysis, and development.
+              </p>
+            </header>
+
+            <!-- Data Analysis -->
+
+            <div class="skills-category">
+              <h3>Data Analysis</h3>
+
+              <div class="skills-card-grid data-analysis-grid onscroll-fade-in">
+                <div class="skill-card">
+                  <i class="fa-brands fa-python" aria-hidden="true"></i>
+
+                  <span>Python</span>
+                </div>
+
+                <div class="skill-card">
+                  <i class="fa-brands fa-r-project" aria-hidden="true"></i>
+
+                  <span>R</span>
+                </div>
+
+                <div class="skill-card">
+                  <img
+                    src="icons/stata-icon.svg"
+                    alt=""
+                    class="skill-card-image"
+                    aria-hidden="true"
+                  />
+
+                  <span>Stata</span>
+                </div>
+
+                <div class="skill-card">
+                  <i class="fa-solid fa-database" aria-hidden="true"></i>
+
+                  <span>PostgreSQL</span>
+                </div>
+
+                <div class="skill-card">
+                  <i class="devicon-mongodb-plain" aria-hidden="true"></i>
+
+                  <span>MongoDB</span>
+                </div>
+
+                <div class="skill-card">
+                  <i class="fa-solid fa-project-diagram" aria-hidden="true"></i>
+
+                  <span>ERD Modeling</span>
+                </div>
+
+                <div class="skill-card">
+                  <img
+                    src="icons/tableau-icon.svg"
+                    alt=""
+                    class="skill-card-image"
+                    aria-hidden="true"
+                  />
+
+                  <span>Tableau</span>
+                </div>
+
+                <div class="skill-card">
+                  <img
+                    src="icons/power-bi-icon.svg"
+                    alt=""
+                    class="skill-card-image"
+                    aria-hidden="true"
+                  />
+
+                  <span>Power BI</span>
+                </div>
+
+                <div class="skill-card">
+                  <i class="fa-solid fa-file-excel" aria-hidden="true"></i>
+
+                  <span>Excel</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Development & Workflow -->
+
+            <div class="skills-category">
+              <h3>Development &amp; Workflow</h3>
+
+              <div class="skills-card-grid onscroll-fade-in">
+                <div class="skill-card">
+                  <i class="fa-brands fa-git-alt" aria-hidden="true"></i>
+
+                  <span>Git</span>
+                </div>
+
+                <div class="skill-card">
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
+
+                  <span>GitHub</span>
+                </div>
+
+                <div class="skill-card">
+                  <i class="fa-brands fa-linux" aria-hidden="true"></i>
+
+                  <span>Linux</span>
+                </div>
+
+                <div class="skill-card">
+                  <i class="fa-solid fa-terminal" aria-hidden="true"></i>
+
+                  <span>Bash</span>
+                </div>
+
+                <div class="skill-card">
+                  <i class="devicon-vscode-plain" aria-hidden="true"></i>
+
+                  <span>VS Code</span>
+                </div>
+
+                <div class="skill-card">
+                  <i class="devicon-vim-plain" aria-hidden="true"></i>
+
+                  <span>Vim</span>
+                </div>
+
+                <div class="skill-card">
+                  <i class="devicon-latex-original" aria-hidden="true"></i>
+
+                  <span>LaTeX</span>
+                </div>
+
+                <div class="skill-card">
+                  <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+
+                  <span>Typst</span>
+                </div>
+
+                <div class="skill-card">
+                  <i class="fa-solid fa-robot" aria-hidden="true"></i>
+
+                  <span>AI-Assisted Coding</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Core Competencies -->
+        <section
+          class="wrapper style1"
+          id="competencies"
+          aria-labelledby="competencies-title"
+        >
+          <div class="inner competencies-inner">
+            <h2 id="competencies-title">Core Competencies</h2>
+
+            <ul class="competencies-grid">
+              <li>
+                <i class="fa-solid fa-pen-nib" aria-hidden="true"></i>
+                <span>Academic Writing</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-chart-column" aria-hidden="true"></i>
+                <span>Statistical Analysis</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-calculator" aria-hidden="true"></i>
+                <span>Quantitative Research</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-clipboard-list" aria-hidden="true"></i>
+                <span>Survey Research</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+                <span>Research Design</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                <span>Literature Review</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-chart-area" aria-hidden="true"></i>
+                <span>Data Interpretation</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-person-chalkboard" aria-hidden="true"></i>
+                <span>Teaching</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Experience -->
+        <section
+          class="wrapper style1"
+          id="experience"
+          aria-labelledby="experience-title"
+        >
+          <div class="inner experience-inner">
+            <header class="experience-header experience-header-split">
+              <p class="section-kicker">Experience</p>
+              <div>
+                <h2 id="experience-title">
+                  Teaching, Research &amp; Digital Learning
+                </h2>
+                <p>
+                  A selection of roles that shaped how I teach, communicate, and
+                  work with evidence.
+                </p>
+              </div>
+            </header>
+
+            <div class="experience-timeline" aria-label="Experience timeline">
+              <article class="experience-milestone">
+                <div class="experience-year">2024–26</div>
+                <div class="experience-marker" aria-hidden="true"></div>
+                <div class="experience-content">
+                  <div class="experience-role-heading">
+                    <i
+                      class="fa-solid fa-chalkboard-user"
+                      aria-hidden="true"
+                    ></i>
+                    <div>
+                      <h3>Graduate Teaching Assistant</h3>
+                      <p class="experience-meta">Texas Tech University</p>
+                    </div>
+                  </div>
+                  <div class="experience-story">
+                    <h4>Teaching and mentoring university students</h4>
+                    <p>
+                      I supported undergraduate sociology and criminology
+                      courses through teaching, grading, course management, and
+                      student mentoring. I also taught Sociology of Religion
+                      topics and worked one-on-one with students on their
+                      academic work.
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="experience-milestone">
+                <div class="experience-year">2023–24</div>
+                <div class="experience-marker" aria-hidden="true"></div>
+                <div class="experience-content">
+                  <div class="experience-role-heading">
+                    <i class="fa-solid fa-comments" aria-hidden="true"></i>
+                    <div>
+                      <h3>IELTS Instructor</h3>
+                      <p class="experience-meta">Mentors’ Education</p>
+                    </div>
+                  </div>
+                  <div class="experience-story">
+                    <h4>Helping students communicate with confidence</h4>
+                    <p>
+                      I taught reading, writing, listening, and speaking and
+                      provided individualized feedback, especially on writing
+                      and speaking. The role strengthened my ability to explain
+                      ideas clearly and adapt feedback to individual learners.
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="experience-milestone">
+                <div class="experience-year">2021–22</div>
+                <div class="experience-marker" aria-hidden="true"></div>
+                <div class="experience-content">
+                  <div class="experience-role-heading">
+                    <i
+                      class="fa-solid fa-magnifying-glass"
+                      aria-hidden="true"
+                    ></i>
+                    <div>
+                      <h3>Research Intern</h3>
+                      <p class="experience-meta">
+                        Centre for Genocide Studies, University of Dhaka
+                      </p>
+                    </div>
+                  </div>
+                  <div class="experience-story">
+                    <h4>Learning research beyond the classroom</h4>
+                    <p>
+                      I conducted archival research and collected and
+                      categorized qualitative material from newspaper archives.
+                      This was an early lesson in systematic evidence collection
+                      and the careful work behind building a research dataset.
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="experience-milestone experience-milestone-last">
+                <div class="experience-year">2019–22</div>
+                <div class="experience-marker" aria-hidden="true"></div>
+                <div class="experience-content">
+                  <div class="experience-role-heading">
+                    <i class="fa-solid fa-laptop-file" aria-hidden="true"></i>
+                    <div>
+                      <h3>Instructor &amp; Content Specialist</h3>
+                      <p class="experience-meta">10 Minute School</p>
+                    </div>
+                  </div>
+                  <div class="experience-story">
+                    <h4>Teaching at scale</h4>
+                    <p>
+                      I worked across instruction, content review, quality
+                      assurance, and assessment development for a large digital
+                      learning platform. The experience taught me how to turn
+                      complex material into clear, structured learning
+                      experiences for a broad audience.
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Impact in Numbers -->
+        <section
+          class="wrapper style1"
+          id="impact"
+          aria-labelledby="impact-title"
+        >
+          <div class="inner impact-inner">
+            <header class="impact-header">
+              <p class="section-kicker">Impact in Numbers</p>
+              <h2 id="impact-title">
+                A few things I have built, taught, and supported.
+              </h2>
+            </header>
+
+            <div class="impact-grid">
+              <div class="impact-stat">
+                <strong class="impact-number" data-target="114" data-suffix="+"
+                  >114+</strong
+                >
+                <span>Video lessons produced</span>
+              </div>
+              <div class="impact-stat">
+                <strong class="impact-number" data-target="2507">2,507</strong>
+                <span>Academic quizzes developed</span>
+              </div>
+              <div class="impact-stat">
+                <strong class="impact-number" data-target="200" data-suffix="+"
+                  >200+</strong
+                >
+                <span>IELTS students taught</span>
+              </div>
+              <div class="impact-stat">
+                <strong class="impact-number" data-target="9">9</strong>
+                <span>University courses supported</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- <section
+          class="wrapper style1"
+          id="gallery"
+          aria-labelledby="gallery-title"
+        >
+          <div class="inner gallery-section">
+            <header class="gallery-header">
+              <h2 id="gallery-title">Selected Moments</h2>
+            </header>
+
+            <ul
+              class="gallery-strip"
+              aria-label="Selected moments photo gallery"
+            >
+              <li class="gallery-item">
+                <figure>
+                  <button
+                    type="button"
+                    class="gallery-trigger"
+                    data-full="images/gallery/10ms-ayman-sadiq.jpg"
+                    aria-label="Open selected moment 1"
+                  >
+                    <img
+                      src="images/gallery/compact-thumbs/10ms-ayman-sadiq.jpg"
+                      alt="Selected moment with Ayman Sadiq"
+                      width="700"
+                      height="699"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </button>
+                </figure>
+              </li>
+              <li class="gallery-item">
+                <figure>
+                  <button
+                    type="button"
+                    class="gallery-trigger"
+                    data-full="images/gallery/competition-3mt.jpg"
+                    aria-label="Open selected moment 2"
+                  >
+                    <img
+                      src="images/gallery/compact-thumbs/competition-3mt.jpg"
+                      alt="Selected moment from the Three Minute Thesis competition"
+                      width="683"
+                      height="683"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </button>
+                </figure>
+              </li>
+              <li class="gallery-item">
+                <figure>
+                  <button
+                    type="button"
+                    class="gallery-trigger"
+                    data-full="images/gallery/conf-mssa.jpg"
+                    aria-label="Open selected moment 3"
+                  >
+                    <img
+                      src="images/gallery/compact-thumbs/conf-mssa.jpg"
+                      alt="Selected moment from the MSSA conference"
+                      width="700"
+                      height="498"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </button>
+                </figure>
+              </li>
+              <li class="gallery-item">
+                <figure>
+                  <button
+                    type="button"
+                    class="gallery-trigger"
+                    data-full="images/gallery/mentors-students.jpg"
+                    aria-label="Open selected moment 4"
+                  >
+                    <img
+                      src="images/gallery/compact-thumbs/mentors-students.jpg"
+                      alt="Selected moment with students at Mentors’ Education"
+                      width="700"
+                      height="700"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </button>
+                </figure>
+              </li>
+              <li class="gallery-item">
+                <figure>
+                  <button
+                    type="button"
+                    class="gallery-trigger"
+                    data-full="images/gallery/conf-ttu.jpeg"
+                    aria-label="Open selected moment 5"
+                  >
+                    <img
+                      src="images/gallery/compact-thumbs/conf-ttu.jpeg"
+                      alt="Selected moment from a Texas Tech University conference"
+                      width="700"
+                      height="525"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </button>
+                </figure>
+              </li>
+              <li class="gallery-item">
+                <figure>
+                  <button
+                    type="button"
+                    class="gallery-trigger"
+                    data-full="images/gallery/10ms-studio.jpg"
+                    aria-label="Open selected moment 6"
+                  >
+                    <img
+                      src="images/gallery/compact-thumbs/10ms-studio.jpg"
+                      alt="Selected moment at the 10 Minute School studio"
+                      width="700"
+                      height="525"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </button>
+                </figure>
+              </li>
+              <li class="gallery-item">
+                <figure>
+                  <button
+                    type="button"
+                    class="gallery-trigger"
+                    data-full="images/gallery/competition-essay-forest.jpg"
+                    aria-label="Open selected moment 7"
+                  >
+                    <img
+                      src="images/gallery/compact-thumbs/competition-essay-forest.jpg"
+                      alt="Selected moment from the Essay Forest competition"
+                      width="700"
+                      height="525"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </button>
+                </figure>
+              </li>
+              <li class="gallery-item">
+                <figure>
+                  <button
+                    type="button"
+                    class="gallery-trigger"
+                    data-full="images/gallery/10ms-qac.jpg"
+                    aria-label="Open selected moment 8"
+                  >
+                    <img
+                      src="images/gallery/compact-thumbs/10ms-qac.jpg"
+                      alt="Selected moment from 10 Minute School QAC"
+                      width="656"
+                      height="656"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </button>
+                </figure>
+              </li>
+              <li class="gallery-item">
+                <figure>
+                  <button
+                    type="button"
+                    class="gallery-trigger"
+                    data-full="images/gallery/competition-essay-forest.jpg"
+                    aria-label="Open selected moment 9"
+                  >
+                    <img
+                      src="images/gallery/compact-thumbs/competition-essay-forest.jpg"
+                      alt="Selected moment from the Essay Forest competition"
+                      width="700"
+                      height="525"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </button>
+                </figure>
+              </li>
+              <li class="gallery-item">
+                <figure>
+                  <button
+                    type="button"
+                    class="gallery-trigger"
+                    data-full="images/gallery/tvshow-news24.jpg"
+                    aria-label="Open selected moment 10"
+                  >
+                    <img
+                      src="images/gallery/compact-thumbs/tvshow-news24.jpg"
+                      alt="Selected moment during a News24 television appearance"
+                      width="700"
+                      height="525"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </button>
+                </figure>
+              </li>
+              <li class="gallery-item">
+                <figure>
+                  <button
+                    type="button"
+                    class="gallery-trigger"
+                    data-full="images/gallery/10ms-covid-post.jpg"
+                    aria-label="Open selected moment 11"
+                  >
+                    <img
+                      src="images/gallery/compact-thumbs/10ms-covid-post.jpg"
+                      alt="Selected moment from 10 Minute School during COVID-19"
+                      width="960"
+                      height="960"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </button>
+                </figure>
+              </li>
+              <li class="gallery-item">
+                <figure>
+                  <button
+                    type="button"
+                    class="gallery-trigger"
+                    data-full="images/gallery/du-workshop.jpg"
+                    aria-label="Open selected moment 12"
+                  >
+                    <img
+                      src="images/gallery/compact-thumbs/du-workshop.jpg"
+                      alt="Selected moment at a University of Dhaka workshop"
+                      width="700"
+                      height="500"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </button>
+                </figure>
+              </li>
+              <li class="gallery-item">
+                <figure>
+                  <button
+                    type="button"
+                    class="gallery-trigger"
+                    data-full="images/gallery/yo-internship.jpg"
+                    aria-label="Open selected moment 13"
+                  >
+                    <img
+                      src="images/gallery/compact-thumbs/yo-internship.jpg"
+                      alt="Selected moment from an internship"
+                      width="700"
+                      height="700"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </button>
+                </figure>
+              </li>
+            </ul>
+          </div>
+        </section> -->
+
+        <section
+          class="wrapper style1 align-center"
+          id="contact"
+          aria-labelledby="contact-title"
+        >
+          <div class="inner medium">
+            <p class="section-kicker">Contact</p>
+            <h2 id="contact-title">Get in touch</h2>
+
+            <form
+              id="contact-form"
+              method="post"
+              action="https://formspree.io/f/xvkoaada"
+            >
+              <div class="fields">
+                <div class="field half">
+                  <label for="name">Name</label>
+
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    value=""
+                    autocomplete="name"
+                    required
+                  />
+                </div>
+
+                <div class="field half">
+                  <label for="email">Email</label>
+
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    value=""
+                    autocomplete="email"
+                    inputmode="email"
+                    required
+                  />
+                </div>
+
+                <div class="field">
+                  <label for="message">Message</label>
+
+                  <textarea
+                    name="message"
+                    id="message"
+                    rows="6"
+                    required
+                  ></textarea>
+                </div>
+
+                <div hidden aria-hidden="true">
+                  <label for="contact-gotcha">Leave this field empty</label>
+                  <input
+                    type="text"
+                    name="_gotcha"
+                    id="contact-gotcha"
+                    tabindex="-1"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+
+              <ul class="actions special">
+                <li>
+                  <button type="submit" id="submit">Send Message</button>
+                </li>
+              </ul>
+
+              <p
+                id="contact-form-status"
+                class="contact-form-status"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
+                hidden
+              ></p>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="wrapper style1 align-center">
+      <div class="inner">
+        <ul class="icons">
+          <li>
+            <span
+              class="icon brands style2 fa-github social-placeholder"
+              aria-hidden="true"
+              title="GitHub link unavailable"
+            ></span>
+          </li>
+
+          <li>
+            <a
+              href="https://www.linkedin.com/in/tahmidui/"
+              class="icon brands style2 fa-linkedin-in"
+              ><span class="label">LinkedIn</span></a
+            >
+          </li>
+
+          <li>
+            <a
+              href="mailto:tahmid.ul.islam71@outlook.com"
+              class="icon style2 fa-envelope"
+              ><span class="label">Email</span></a
+            >
+          </li>
+        </ul>
+
+        <p>&copy; 2026 Tahmid Ul Islam. Design adapted from HTML5 UP.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+
+    <script src="assets/js/main.js"></script>
+
+    <script src="assets/js/app.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const greeting = document.getElementById("typed-greeting");
+        const role = document.getElementById("typed-role");
+        const motionPreference = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        );
+        const rolePrefix = "I am a ";
+        const roles = [
+          "quantitative social scientist",
+          "data scientist",
+          "sociologist",
+          "writer",
+        ];
+        let stopped = false;
+
+        if (!greeting || !role || motionPreference.matches) return;
+
+        role.textContent = "";
+
+        const wait = (duration) =>
+          new Promise((resolve) => window.setTimeout(resolve, duration));
+
+        const addCursor = (container, character) => {
+          const cursor = document.createElement("span");
+          cursor.className = "typewriter-cursor";
+          cursor.setAttribute("aria-hidden", "true");
+          cursor.textContent = character;
+          container.insertAdjacentElement("afterend", cursor);
+          return cursor;
+        };
+
+        const typeText = async (element, text, speed, clearFirst = true) => {
+          if (clearFirst) element.textContent = "";
+          for (const character of text) {
+            if (stopped) return;
+            element.textContent += character;
+            await wait(speed);
+          }
+        };
+
+        const eraseToLength = async (element, length, speed) => {
+          while (element.textContent.length > length) {
+            if (stopped) return;
+            element.textContent = element.textContent.slice(0, -1);
+            await wait(speed);
+          }
+        };
+
+        const showStaticText = () => {
+          stopped = true;
+          greeting.textContent = "Hi\nI am Tahmid";
+          role.textContent = rolePrefix + roles[0];
+          document
+            .querySelectorAll(".typewriter-cursor")
+            .forEach((cursor) => cursor.remove());
+        };
+
+        motionPreference.addEventListener?.("change", (event) => {
+          if (event.matches) showStaticText();
+        });
+
+        const runTypewriter = async () => {
+          const greetingCursor = addCursor(greeting, "|");
+          await typeText(greeting, "Hi\nI am Tahmid", 50);
+          greetingCursor.remove();
+          if (stopped) return;
+
+          await wait(300);
+          const roleCursor = addCursor(role, "_");
+          await typeText(role, rolePrefix + roles[0], 50);
+          await wait(1500);
+          let roleIndex = 1;
+
+          while (!stopped) {
+            await eraseToLength(role, rolePrefix.length, 30);
+            await wait(300);
+            await typeText(role, roles[roleIndex], 50, false);
+            await wait(1500);
+            roleIndex = (roleIndex + 1) % roles.length;
+          }
+
+          roleCursor.remove();
+        };
+
+        runTypewriter();
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const counters = document.querySelectorAll(".impact-number");
+        if (!counters.length) return;
+
+        const reduceMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        const renderFinalValue = (counter) => {
+          const target = Number(counter.dataset.target || 0);
+          const suffix = counter.dataset.suffix || "";
+          counter.textContent = target.toLocaleString() + suffix;
+        };
+
+        if (reduceMotion || !("IntersectionObserver" in window)) {
+          counters.forEach(renderFinalValue);
+          return;
+        }
+
+        const animateCounter = (counter) => {
+          const target = Number(counter.dataset.target || 0);
+          const suffix = counter.dataset.suffix || "";
+          const duration = 1200;
+          const start = performance.now();
+
+          const tick = (now) => {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const value = Math.round(target * eased);
+            counter.textContent = value.toLocaleString() + suffix;
+
+            if (progress < 1) requestAnimationFrame(tick);
+          };
+
+          requestAnimationFrame(tick);
+        };
+
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              animateCounter(entry.target);
+              obs.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.45 },
+        );
+
+        counters.forEach((counter) => observer.observe(counter));
+      });
+    </script>
+  </body>
+</html>
