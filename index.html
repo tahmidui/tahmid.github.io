@@ -33,6 +33,36 @@
   <body class="is-preload">
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
+    <nav id="site-nav" aria-label="Primary navigation">
+      <button
+        type="button"
+        id="site-nav-toggle"
+        aria-expanded="false"
+        aria-controls="site-nav-links"
+      >
+        <span>NAVIGATE</span>
+        <span class="site-nav-toggle-symbol" aria-hidden="true">+</span>
+      </button>
+
+      <div id="site-nav-links" class="site-nav-links">
+        <a href="#first" data-section="first">ABOUT</a>
+        <span class="site-nav-separator" aria-hidden="true">·</span>
+        <a href="#education" data-section="education">EDUCATION</a>
+        <span class="site-nav-separator" aria-hidden="true">·</span>
+        <a href="#research" data-section="research">RESEARCH</a>
+        <span class="site-nav-separator" aria-hidden="true">·</span>
+        <a href="https://tahmidulislam.me/portfolio">PORTFOLIO</a>
+        <span class="site-nav-separator" aria-hidden="true">·</span>
+        <a href="#skills" data-section="skills">SKILLS</a>
+        <span class="site-nav-separator" aria-hidden="true">·</span>
+        <a href="#experience" data-section="experience">EXPERIENCE</a>
+        <span class="site-nav-separator" aria-hidden="true">·</span>
+        <a href="https://tahmidulislam.me/bangla-blog">BANGLA BLOG</a>
+        <span class="site-nav-separator" aria-hidden="true">·</span>
+        <a href="#contact" data-section="contact">CONTACT</a>
+      </div>
+    </nav>
+
     <nav id="external-nav" aria-label="Social links">
       <span
         href="https://github.com/tahmidui"
@@ -148,10 +178,14 @@
                   class="button big wide"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >View my work<span class="sr-only">
+                  >View my portfolio<span class="sr-only">
                     (opens in a new tab)</span
                   ></a
                 >
+              </li>
+
+              <li>
+                <a href="#research" class="button big wide">View my research</a>
               </li>
             </ul>
           </div>
@@ -490,12 +524,17 @@
                   Elmee Tabassum, <strong>Tahmid Ul Islam</strong>, Ozifatun
                   Jannat Akhi, Israt Sultana Nishe, Badrun Nahar Laxy, Sanjida
                   Sultana Zerin, Abdiqani Jama Roble, Md. Imran Hossain, Sharmin
-                  Ahmed, and Salauddin Al Azad. 2020. “RT-PCR Mediated
-                  Identification of SARS-CoV-2 Patients from Particular Regions
-                  of Bangladesh and the Multi-factorial Analysis Considering
-                  Their Pre and Post Infection Health Conditions.”
-                  <em>Biotechnology Journal International</em> <em>24</em>(6):
-                  43–56.
+                  Ahmed, and Salauddin Al Azad. 2020.
+                  <a
+                    href="https://hal.science/hal-05308465/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >“RT-PCR Mediated Identification of SARS-CoV-2 Patients from
+                    Particular Regions of Bangladesh and the Multi-factorial
+                    Analysis Considering Their Pre and Post Infection Health
+                    Conditions.”</a
+                  >
+                  <em>Biotechnology Journal International</em> 24(6):43–56.
                 </p>
               </div>
             </div>
@@ -1155,6 +1194,27 @@
             <p class="section-kicker">Contact</p>
             <h2 id="contact-title">Get in touch</h2>
 
+            <p class="contact-intro">
+              Interested in research, collaboration, or data-related
+              opportunities? <br />
+              I would be happy to hear from you.
+            </p>
+
+            <div class="contact-email-list">
+              <p class="contact-email">
+                <a href="mailto:tahmid.ul.islam71@outlook.com"
+                  >tahmid.ul.islam71@outlook.com</a
+                >
+                <span>Personal correspondence</span>
+              </p>
+
+              <p class="contact-email">
+                <a href="mailto:tahmisla@ttu.edu">tahmisla@ttu.edu</a>
+                <span>Texas Tech colleagues and contacts</span>
+              </p>
+            </div>
+
+            <p class="contact-form-intro">Or send a message</p>
             <form
               id="contact-form"
               method="post"
