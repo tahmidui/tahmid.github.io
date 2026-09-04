@@ -353,6 +353,7 @@ input[type="submit"].primary:hover {
 #research,
 #skills,
 #experience,
+#awards,
 #contact {
   scroll-margin-top: 4rem;
 }
@@ -502,11 +503,14 @@ dialog {
   font-size: clamp(1rem, 0.95rem + 0.15vw, 1.08rem);
 }
 
-.about-lead {
+.about-lead,
+.presentation-statement,
+.awards-header p {
   color: var(--clay) !important;
   font-family: "Domine", Georgia, serif;
   font-size: clamp(1.15rem, 1.5vw, 1.4rem) !important;
   font-weight: 700;
+  line-height: 1.75;
 }
 
 .about-actions {
@@ -1013,6 +1017,172 @@ footer.wrapper > .inner {
 
 .academic-citation strong {
   font-weight: 700;
+}
+
+.presentation-showcase > h3 {
+  margin-bottom: 0.8rem;
+}
+
+.presentation-statement {
+  max-width: 680px;
+  margin: 0 0 1.4rem;
+}
+
+.presentation-carousel {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.presentation-carousel figure {
+  margin: 0;
+}
+
+.presentation-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius);
+  touch-action: pan-y;
+}
+
+.presentation-slide {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 0.45s ease,
+    visibility 0s linear 0.45s;
+}
+
+.presentation-slide.is-active {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+.presentation-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.presentation-slide.is-contain img {
+  object-fit: contain;
+}
+
+.presentation-caption {
+  min-height: 4.5em;
+  margin-top: 0.65rem;
+  color: rgba(10, 18, 42, 0.7);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.presentation-caption span {
+  display: block;
+}
+
+.presentation-caption span:first-child {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.presentation-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 0.25rem;
+}
+
+.presentation-arrow,
+.presentation-dot {
+  display: grid;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  place-items: center;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  color: rgba(10, 18, 42, 0.62) !important;
+  transform: none !important;
+}
+
+.presentation-arrow {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0;
+  font-family: Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.presentation-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.05rem;
+}
+
+.presentation-dot {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+}
+
+.presentation-dot::before {
+  width: 0.45rem;
+  height: 0.45rem;
+  background: rgba(10, 18, 42, 0.26);
+  border-radius: 50%;
+  content: "";
+}
+
+.presentation-dot.is-active::before {
+  background: var(--clay);
+}
+
+.presentation-arrow:hover,
+.presentation-arrow:focus-visible {
+  color: var(--clay) !important;
+}
+
+/* =========================================
+   AWARDS AND RECOGNITION
+   ========================================= */
+
+#awards {
+  padding: clamp(3.25rem, 4vw, 4.75rem) 2rem;
+  background: var(--paper);
+}
+
+.awards-section {
+  width: min(100%, var(--content-wide));
+  margin: 0 auto;
+}
+
+.awards-header {
+  width: min(100%, 900px);
+  margin: 0 auto 1.5rem;
+  text-align: left;
+}
+
+.awards-header h2 {
+  margin-bottom: 0.75rem;
+  font-size: clamp(2.4rem, 4vw, 4.2rem);
+}
+
+.awards-header p {
+  max-width: 680px;
+  margin: 0;
+  font-style: normal;
 }
 
 /* =========================================
@@ -2236,8 +2406,13 @@ footer.wrapper .icon:hover {
   #skills,
   #experience,
   #impact,
+  #awards,
   #gallery {
     padding: 2.75rem 1.25rem;
+  }
+
+  .awards-header {
+    margin-bottom: 1.25rem;
   }
 
   .research-header {
@@ -2278,6 +2453,20 @@ footer.wrapper .icon:hover {
 
   .academic-citation {
     margin-bottom: 1rem;
+  }
+
+  .presentation-viewport {
+    border-radius: 10px;
+  }
+
+  .presentation-caption {
+    min-height: 5.4em;
+    margin-top: 0.55rem;
+    font-size: 0.86rem;
+  }
+
+  .presentation-controls {
+    margin-top: 0.1rem;
   }
 
   .research-interest-list {

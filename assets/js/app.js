@@ -92,6 +92,139 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   updateSiteNav();
 
+  const reduceCarouselMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  const initializeCarousel = function(carousel) {
+    const slides = Array.from(carousel.querySelectorAll('.presentation-slide'));
+    const dots = Array.from(carousel.querySelectorAll('.presentation-dot'));
+    const caption = carousel.querySelector('.presentation-caption');
+    const previousButton = carousel.querySelector('.presentation-prev');
+    const nextButton = carousel.querySelector('.presentation-next');
+    let activeSlide = 0;
+    let carouselTimer = null;
+    let interactionActive = false;
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    const stopTimer = function() {
+      window.clearInterval(carouselTimer);
+      carouselTimer = null;
+    };
+
+    const startTimer = function() {
+      stopTimer();
+      if (
+        slides.length < 2 ||
+        reduceCarouselMotion.matches ||
+        interactionActive ||
+        document.hidden
+      ) {
+        return;
+      }
+
+      carouselTimer = window.setInterval(function() {
+        showSlide(activeSlide + 1);
+      }, 5000);
+    };
+
+    const showSlide = function(index, restartTimer = false) {
+      if (!slides.length || !caption) return;
+      activeSlide = (index + slides.length) % slides.length;
+
+      slides.forEach(function(slide, slideIndex) {
+        const isActive = slideIndex === activeSlide;
+        slide.classList.toggle('is-active', isActive);
+        if (isActive) {
+          slide.removeAttribute('aria-hidden');
+        } else {
+          slide.setAttribute('aria-hidden', 'true');
+        }
+      });
+
+      dots.forEach(function(dot, dotIndex) {
+        const isActive = dotIndex === activeSlide;
+        dot.classList.toggle('is-active', isActive);
+        if (isActive) {
+          dot.setAttribute('aria-current', 'true');
+        } else {
+          dot.removeAttribute('aria-current');
+        }
+      });
+
+      const slide = slides[activeSlide];
+      const captionLines = caption.querySelectorAll('span');
+      if (captionLines[0]) captionLines[0].textContent = slide.dataset.caption || '';
+      if (captionLines[1]) {
+        captionLines[1].textContent = slide.dataset.captionDetail || '';
+      }
+
+      if (restartTimer) startTimer();
+    };
+
+    previousButton?.addEventListener('click', function() {
+      showSlide(activeSlide - 1, true);
+    });
+
+    nextButton?.addEventListener('click', function() {
+      showSlide(activeSlide + 1, true);
+    });
+
+    dots.forEach(function(dot, dotIndex) {
+      dot.addEventListener('click', function() {
+        showSlide(dotIndex, true);
+      });
+    });
+
+    carousel.addEventListener('mouseenter', function() {
+      interactionActive = true;
+      stopTimer();
+    });
+
+    carousel.addEventListener('mouseleave', function() {
+      interactionActive = false;
+      startTimer();
+    });
+
+    carousel.addEventListener('focusin', function() {
+      interactionActive = true;
+      stopTimer();
+    });
+
+    carousel.addEventListener('focusout', function(event) {
+      if (carousel.contains(event.relatedTarget)) return;
+      interactionActive = false;
+      startTimer();
+    });
+
+    carousel.addEventListener('touchstart', function(event) {
+      interactionActive = true;
+      stopTimer();
+      touchStartX = event.changedTouches[0].clientX;
+      touchStartY = event.changedTouches[0].clientY;
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', function(event) {
+      const horizontalDistance = event.changedTouches[0].clientX - touchStartX;
+      const verticalDistance = event.changedTouches[0].clientY - touchStartY;
+      interactionActive = false;
+
+      if (
+        Math.abs(horizontalDistance) >= 40 &&
+        Math.abs(horizontalDistance) > Math.abs(verticalDistance)
+      ) {
+        showSlide(activeSlide + (horizontalDistance < 0 ? 1 : -1), true);
+      } else {
+        startTimer();
+      }
+    }, { passive: true });
+
+    reduceCarouselMotion.addEventListener?.('change', startTimer);
+    document.addEventListener('visibilitychange', startTimer);
+    startTimer();
+  };
+
+  document.querySelectorAll('.presentation-carousel').forEach(initializeCarousel);
+
   const cvModal = document.getElementById('cv-modal');
   const openButton = document.getElementById('cv-modal-open');
   const closeButton = document.getElementById('cv-modal-close');
