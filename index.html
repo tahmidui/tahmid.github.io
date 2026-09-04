@@ -14,7 +14,7 @@
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
     />
 
-    <title>Tahmid Ul Islam</title>
+    <title>Tahmid Ul Islam | Sociologist and Data Science Graduate Student</title>
 
     <meta charset="utf-8" />
 
@@ -37,6 +37,7 @@
       <button
         type="button"
         id="site-nav-toggle"
+        aria-label="Open navigation menu"
         aria-expanded="false"
         aria-controls="site-nav-links"
       >
@@ -65,29 +66,35 @@
     </nav>
 
     <nav id="external-nav" aria-label="Social links">
-      <span
+      <a
         href="https://github.com/tahmidui"
-        class="icon brands fa-github social-placeholder"
-        aria-hidden="true"
+        class="icon brands fa-github"
+        target="_blank"
+        rel="noopener noreferrer"
         title="GitHub"
-      ></span>
+        ><span class="label">GitHub (opens in a new tab)</span></a
+      >
 
       <a
         href="https://www.linkedin.com/in/tahmidui/"
         class="icon brands fa-linkedin-in"
+        target="_blank"
+        rel="noopener noreferrer"
         title="LinkedIn"
-        ><span class="label">LinkedIn</span></a
+        ><span class="label">LinkedIn (opens in a new tab)</span></a
       >
 
       <span
         class="icon brands fa-orcid social-placeholder"
-        aria-hidden="true"
+        role="img"
+        aria-label="ORCID link unavailable"
         title="ORCID link unavailable"
       ></span>
 
       <span
         class="icon brands fa-google social-placeholder"
-        aria-hidden="true"
+        role="img"
+        aria-label="Google Scholar link unavailable"
         title="Google Scholar link unavailable"
       ></span>
     </nav>
@@ -177,8 +184,6 @@
                 <a
                   href="http://tahmidulislam.me/portfolio"
                   class="button big wide"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   >View my portfolio<span class="sr-only">
                     (opens in a new tab)</span
                   ></a
@@ -532,7 +537,9 @@
                     >“RT-PCR Mediated Identification of SARS-CoV-2 Patients from
                     Particular Regions of Bangladesh and the Multi-factorial
                     Analysis Considering Their Pre and Post Infection Health
-                    Conditions.”</a
+                    Conditions.”<span class="sr-only">
+                      (opens in a new tab)</span
+                    ></a
                   >
                   <em>Biotechnology Journal International</em> 24(6):43–56.
                 </p>
@@ -616,7 +623,7 @@
                     </div>
                   </div>
 
-                  <figcaption class="presentation-caption" aria-live="polite">
+                  <figcaption class="presentation-caption" aria-live="off">
                     <span>2026 Graduate Poster Competition · Poster Session</span>
                     <span
                       >Texas Tech University Graduate Student Research Conference
@@ -691,19 +698,21 @@
               <h3>Data Analysis</h3>
 
               <div class="skills-card-grid data-analysis-grid onscroll-fade-in">
-                <div class="skill-card">
-                  <i class="fa-brands fa-python" aria-hidden="true"></i>
-
-                  <span>Python</span>
-                </div>
-
-                <div class="skill-card">
+                <div class="skill-card interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="skill-r-description">
                   <i class="fa-brands fa-r-project" aria-hidden="true"></i>
 
                   <span>R</span>
+                  <p class="skill-description" id="skill-r-description">I primarily use R for data manipulation, cleaning, and analysis using the tidyverse. I particularly enjoy ggplot2 and its grammar of graphics framework, along with R’s vast package ecosystem.</p>
                 </div>
 
-                <div class="skill-card">
+                <div class="skill-card interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="skill-python-description">
+                  <i class="fa-brands fa-python" aria-hidden="true"></i>
+
+                  <span>Python</span>
+                  <p class="skill-description" id="skill-python-description">I appreciate Python for its simplicity and readable syntax. While I started in R, I am currently focused on pandas and seaborn because of Python’s widespread industry adoption.</p>
+                </div>
+
+                <div class="skill-card interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="skill-stata-description">
                   <img
                     src="icons/stata-icon.svg"
                     alt=""
@@ -712,9 +721,10 @@
                   />
 
                   <span>Stata</span>
+                  <p class="skill-description" id="skill-stata-description">I used Stata extensively for my Sociology MA thesis to clean, recode, and analyze data.</p>
                 </div>
 
-                <div class="skill-card">
+                <div class="skill-card interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="skill-postgresql-description">
                   <img
                     src="icons/postgresql-icon.svg"
                     alt=""
@@ -723,6 +733,7 @@
                   />
 
                   <span>PostgreSQL</span>
+                  <p class="skill-description" id="skill-postgresql-description">Although I started with MySQL, I am currently focused on PostgreSQL because of its widespread use and open-source nature.</p>
                 </div>
 
                 <!-- <div class="skill-card">
@@ -731,13 +742,14 @@
                   <span>MongoDB</span>
                 </div> -->
 
-                <div class="skill-card">
+                <div class="skill-card interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="skill-erd-description">
                   <i class="fa-solid fa-project-diagram" aria-hidden="true"></i>
 
                   <span>ERD Modeling</span>
+                  <p class="skill-description" id="skill-erd-description">I am capable of designing relational database schemas using entity-relationship diagrams.</p>
                 </div>
 
-                <div class="skill-card">
+                <div class="skill-card interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="skill-tableau-description">
                   <img
                     src="icons/tableau-icon.svg"
                     alt=""
@@ -746,9 +758,10 @@
                   />
 
                   <span>Tableau</span>
+                  <p class="skill-description" id="skill-tableau-description">I use Tableau to build interactive dashboards and am currently further developing this skill through graduate coursework.</p>
                 </div>
 
-                <div class="skill-card">
+                <div class="skill-card interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="skill-power-bi-description">
                   <img
                     src="icons/power-bi-icon.svg"
                     alt=""
@@ -757,12 +770,14 @@
                   />
 
                   <span>Power BI</span>
+                  <p class="skill-description" id="skill-power-bi-description">I am currently learning Power BI and building proficiency in creating reports and interactive dashboards.</p>
                 </div>
 
-                <div class="skill-card">
+                <div class="skill-card interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="skill-excel-description">
                   <i class="fa-solid fa-file-excel" aria-hidden="true"></i>
 
                   <span>Excel</span>
+                  <p class="skill-description" id="skill-excel-description">I use Excel for smaller datasets, general-purpose data entry, quick inspection, and straightforward analysis rather than advanced statistical modeling.</p>
                 </div>
               </div>
             </div>
@@ -773,46 +788,53 @@
               <h3>Development &amp; Workflow</h3>
 
               <div class="skills-card-grid onscroll-fade-in">
-                <div class="skill-card">
+                <div class="skill-card interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="skill-git-description">
                   <i class="fa-brands fa-git-alt" aria-hidden="true"></i>
 
                   <span>Git</span>
+                  <p class="skill-description" id="skill-git-description">Git is one of my favorite tools. I value the control it provides over version history, experimentation, and reproducible development workflows.</p>
                 </div>
 
-                <div class="skill-card">
+                <div class="skill-card interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="skill-github-description">
                   <i class="fa-brands fa-github" aria-hidden="true"></i>
 
                   <span>GitHub</span>
+                  <p class="skill-description" id="skill-github-description">I appreciate GitHub for its power in sharing knowledge, code, and tools. This website is hosted using GitHub Pages.</p>
                 </div>
 
-                <div class="skill-card">
+                <div class="skill-card interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="skill-linux-description">
                   <i class="fa-brands fa-linux" aria-hidden="true"></i>
 
                   <span>Linux</span>
+                  <p class="skill-description" id="skill-linux-description">I appreciate the extensibility of open-source systems. While my primary laptop is a Mac, I frequently work with Linux through command-line environments and servers.</p>
                 </div>
 
-                <div class="skill-card">
+                <div class="skill-card interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="skill-bash-description">
                   <i class="fa-solid fa-terminal" aria-hidden="true"></i>
 
                   <span>Bash</span>
+                  <p class="skill-description" id="skill-bash-description">Driven by a preference for keyboard-centric workflows, I use Bash regularly for file manipulation and command-line tasks.</p>
                 </div>
 
-                <div class="skill-card">
+                <div class="skill-card interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="skill-vscode-description">
                   <i class="devicon-vscode-plain" aria-hidden="true"></i>
 
                   <span>VS Code</span>
+                  <p class="skill-description" id="skill-vscode-description">VS Code is my primary development environment. I value its extensibility and its simple, intuitive interface.</p>
                 </div>
 
-                <div class="skill-card">
+                <div class="skill-card interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="skill-vim-description">
                   <i class="devicon-vim-plain" aria-hidden="true"></i>
 
                   <span>Vim</span>
+                  <p class="skill-description" id="skill-vim-description">Learning Vim was one of my best productivity decisions. I use Vim-style keybindings wherever possible as part of my keyboard-driven workflow.</p>
                 </div>
 
-                <div class="skill-card">
+                <div class="skill-card interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="skill-latex-description">
                   <i class="devicon-latex-original" aria-hidden="true"></i>
 
                   <span>LaTeX</span>
+                  <p class="skill-description" id="skill-latex-description">I was initially drawn to LaTeX by the Computer Modern typeface and the simplicity of working in plain text. I now use it for creating structured academic and professional documents.</p>
                 </div>
 
                 <!-- <div class="skill-card">
@@ -826,10 +848,11 @@
                   <span>Typst</span>
                 </div> -->
 
-                <div class="skill-card">
+                <div class="skill-card interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="skill-ai-agents-description">
                   <i class="fa-solid fa-robot" aria-hidden="true"></i>
 
                   <span>AI Coding Agents</span>
+                  <p class="skill-description" id="skill-ai-agents-description">I am actively exploring AI coding agents as part of my development workflow. This website was developed with the assistance of Codex and GitHub Copilot.</p>
                 </div>
               </div>
             </div>
@@ -846,37 +869,45 @@
             <h2 id="competencies-title">Core Competencies</h2>
 
             <ul class="competencies-grid">
-              <li>
+              <li class="interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="competency-writing-description">
                 <i class="fa-solid fa-pen-nib" aria-hidden="true"></i>
                 <span>Academic Writing</span>
+                <p class="skill-description" id="competency-writing-description">Academic writing is one of the most valuable skills I developed in graduate school. Writing is a tool I use for thinking, developing arguments and theories, and identifying gaps in my logic.</p>
               </li>
-              <li>
+              <li class="interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="competency-statistics-description">
                 <i class="fa-solid fa-chart-column" aria-hidden="true"></i>
                 <span>Statistical Analysis</span>
+                <p class="skill-description" id="competency-statistics-description">I have a strong foundation in statistical concepts. After using multiple linear regression in my MA thesis, I am continuing to deepen my knowledge of regression, statistical modeling, and machine learning.</p>
               </li>
-              <li>
+              <li class="interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="competency-quantitative-description">
                 <i class="fa-solid fa-calculator" aria-hidden="true"></i>
                 <span>Quantitative Research</span>
+                <p class="skill-description" id="competency-quantitative-description">I primarily use quantitative methods in social research while appreciating how quantitative and qualitative approaches can complement each other.</p>
               </li>
-              <li>
+              <li class="interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="competency-survey-description">
                 <i class="fa-solid fa-clipboard-list" aria-hidden="true"></i>
                 <span>Survey Research</span>
+                <p class="skill-description" id="competency-survey-description">Through my MA thesis, I developed a strong appreciation for the usefulness of survey data in understanding social reality.</p>
               </li>
-              <li>
+              <li class="interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="competency-design-description">
                 <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
                 <span>Research Design</span>
+                <p class="skill-description" id="competency-design-description">I gained hands-on experience with research design through developing and completing my MA thesis and other graduate research projects.</p>
               </li>
-              <li>
+              <li class="interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="competency-literature-description">
                 <i class="fa-solid fa-book-open" aria-hidden="true"></i>
                 <span>Literature Review</span>
+                <p class="skill-description" id="competency-literature-description">Literature review is a core skill developed through my graduate coursework and research. I focus on interpreting and synthesizing academic literature to understand existing knowledge and identify research gaps.</p>
               </li>
-              <li>
+              <li class="interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="competency-interpretation-description">
                 <i class="fa-solid fa-chart-area" aria-hidden="true"></i>
                 <span>Data Interpretation</span>
+                <p class="skill-description" id="competency-interpretation-description">I interpret statistical results in substantive context, with an emphasis on translating numerical findings into meaningful insights.</p>
               </li>
-              <li>
+              <li class="interactive-skill" tabindex="0" role="button" aria-expanded="false" aria-controls="competency-teaching-description">
                 <i class="fa-solid fa-person-chalkboard" aria-hidden="true"></i>
                 <span>Teaching</span>
+                <p class="skill-description" id="competency-teaching-description">Teaching is an important part of my professional experience. See the Teaching &amp; Research section below for examples of my teaching, mentoring, and educational work.</p>
               </li>
             </ul>
           </div>
@@ -952,7 +983,7 @@
                     </div>
                   </div>
 
-                  <figcaption class="presentation-caption" aria-live="polite">
+                  <figcaption class="presentation-caption" aria-live="off">
                     <span>IELTS Instructor · Mentors' Education</span>
                     <span
                       >Teaching and mentoring students in reading, writing,
@@ -1527,7 +1558,7 @@
                   </div>
                 </div>
 
-                <figcaption class="presentation-caption" aria-live="polite">
+                <figcaption class="presentation-caption" aria-live="off">
                   <span>Instructor Recognition · 10 Minute School</span>
                   <span>Recognition from Ayman Sadiq, CEO of 10 Minute School</span>
                 </figcaption>
@@ -1624,7 +1655,9 @@
             >
               <div class="fields">
                 <div class="field half">
-                  <label for="name">Name</label>
+                  <label for="name"
+                    >Name <span class="required-text">(required)</span></label
+                  >
 
                   <input
                     type="text"
@@ -1637,7 +1670,9 @@
                 </div>
 
                 <div class="field half">
-                  <label for="email">Email</label>
+                  <label for="email"
+                    >Email <span class="required-text">(required)</span></label
+                  >
 
                   <input
                     type="email"
@@ -1651,7 +1686,10 @@
                 </div>
 
                 <div class="field">
-                  <label for="message">Message</label>
+                  <label for="message"
+                    >Message
+                    <span class="required-text">(required)</span></label
+                  >
 
                   <textarea
                     name="message"
@@ -1697,26 +1735,30 @@
       <div class="inner">
         <ul class="icons">
           <li>
-            <span
-              class="icon brands style2 fa-github social-placeholder"
-              aria-hidden="true"
-              title="GitHub link unavailable"
-            ></span>
+            <a
+              href="https://github.com/tahmidui"
+              class="icon brands style2 fa-github"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><span class="label">GitHub (opens in a new tab)</span></a
+            >
           </li>
 
           <li>
             <a
               href="https://www.linkedin.com/in/tahmidui/"
               class="icon brands style2 fa-linkedin-in"
-              ><span class="label">LinkedIn</span></a
+              target="_blank"
+              rel="noopener noreferrer"
+              ><span class="label">LinkedIn (opens in a new tab)</span></a
             >
           </li>
 
           <li>
             <a
               href="mailto:tahmid.ul.islam71@outlook.com"
-              class="icon style2 fa-envelope"
-              ><span class="label">Email</span></a
+              class="icon style2 fa-envelope footer-email-link"
+              ><span class="label">Email Tahmid Ul Islam</span></a
             >
           </li>
         </ul>

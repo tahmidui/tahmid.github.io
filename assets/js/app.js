@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!siteNav || !siteNavToggle) return;
     siteNav.classList.remove('is-open');
     siteNavToggle.setAttribute('aria-expanded', 'false');
+    siteNavToggle.setAttribute('aria-label', 'Open navigation menu');
     siteNavToggle.querySelector('.site-nav-toggle-symbol').textContent = '+';
   };
 
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const isOpen = !siteNav.classList.contains('is-open');
     siteNav.classList.toggle('is-open', isOpen);
     siteNavToggle.setAttribute('aria-expanded', String(isOpen));
+    siteNavToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
     siteNavToggle.querySelector('.site-nav-toggle-symbol').textContent = isOpen ? '×' : '+';
   });
 
@@ -92,6 +94,39 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   updateSiteNav();
 
+  const interactiveSkills = Array.from(document.querySelectorAll('.interactive-skill'));
+
+  const closeInteractiveSkills = function(except) {
+    interactiveSkills.forEach(function(skill) {
+      if (skill === except) return;
+      skill.classList.remove('is-active');
+      skill.setAttribute('aria-expanded', 'false');
+    });
+  };
+
+  const toggleInteractiveSkill = function(skill) {
+    const shouldOpen = !skill.classList.contains('is-active');
+    closeInteractiveSkills(skill);
+    skill.classList.toggle('is-active', shouldOpen);
+    skill.setAttribute('aria-expanded', String(shouldOpen));
+  };
+
+  interactiveSkills.forEach(function(skill) {
+    skill.addEventListener('click', function() {
+      toggleInteractiveSkill(skill);
+    });
+
+    skill.addEventListener('keydown', function(event) {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      toggleInteractiveSkill(skill);
+    });
+  });
+
+  document.addEventListener('click', function(event) {
+    if (!event.target.closest('.interactive-skill')) closeInteractiveSkills();
+  });
+
   const reduceCarouselMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   const initializeCarousel = function(carousel) {
@@ -130,6 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const showSlide = function(index, restartTimer = false) {
       if (!slides.length || !caption) return;
       activeSlide = (index + slides.length) % slides.length;
+      caption.setAttribute('aria-live', restartTimer ? 'polite' : 'off');
 
       slides.forEach(function(slide, slideIndex) {
         const isActive = slideIndex === activeSlide;
