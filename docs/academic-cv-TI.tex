@@ -4,7 +4,9 @@
 % This is a modified version from: https://github.com/Mamunia
 % ------------------------
 
-\documentclass[letterpaper,10.5pt]{article}
+\RequirePackage{fix-cm}
+\documentclass[letterpaper,10pt]{article}
+\usepackage[fontsize=10.25pt]{fontsize}
 \usepackage{fontawesome5}
 \usepackage{datetime}
 \newdateformat{MonthYear}{\monthname[\THEMONTH] \THEYEAR}
@@ -13,7 +15,9 @@
 \usepackage{titlesec}
 \usepackage[dvipsnames]{color}
 \usepackage{enumitem}
-\usepackage{hyperref}
+\setlist[description]{topsep=0.25em,itemsep=0.15em,parsep=0pt,partopsep=0pt}
+\usepackage{needspace}
+\usepackage[hidelinks]{hyperref}
 \usepackage{lastpage}
 \usepackage{fancyhdr}
 % Keep header area clean
@@ -30,7 +34,7 @@
 \setlength{\tabcolsep}{0in}
 % Sections formatting
 \titleformat{\section}{
-\vspace{-10pt}\scshape\raggedright\large\color{black}
+    \vspace{-10pt}\scshape\raggedright\large\color{black}
 }{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
 % Custom commands
 \renewcommand{\labelitemii}{$\circ$}
@@ -38,357 +42,346 @@
 % Main Document
 \begin{document}
 
-% Heading
+    % Heading
     \begin{center}
-        \textbf{\LARGE Tahmid Ul Islam} \\
+        \textbf{\LARGE Tahmid Ul Islam}, M.A. \\
         \vspace{0.75em}
-        Texas Tech University, Lubbock, Texas - 79401 \\
+        M.S. Student in Data Science $|$ Sociologist\\
+        Texas Tech University,
+        Lubbock,
+        Texas 79415 \\
         \vspace{0.75em}
-        \href{mailto:tahmisla@ttu.edu}{tahmisla@ttu.edu} $|$ 
+        \href{mailto:tahmisla@ttu.edu}{tahmisla@ttu.edu} $|$
         \href{mailto:tahmid.ul.islam71@outlook.com}{tahmid.ul.islam71@outlook.com} \\
-        \url{linkedin.com/in/tahmidui} $|$ 
-        \url{tahmidulislam.me/} \\
-        +1 806-283-3040 $|$ \MonthYear\today
+        \url{linkedin.com/in/tahmidui} $|$
+        \url{github.com/tahmidui} \\
+        \url{tahmidulislam.me}
+        % Phone number 
+        $|$ 
+        \MonthYear\today
     \end{center}
     \thispagestyle{empty}
-  
+
     \vspace{0.5em}
 
-% Education
-\section{Education}
-    
-\vspace{0.3em} 
-% Texas Tech MS in Data Science
+    % Education
+    \section{Education}
 
-% Institution Name
+    \vspace{0.3em}
+    % Texas Tech MS in Data Science
+
+    % Institution Name
     \begin{minipage}{.75\linewidth}
         \begin{flushleft}
             \textbf{Texas Tech University}
         \end{flushleft} \end{minipage}
-% Location
-    \hfill 
+    % Location
+    \hfill
     \begin{minipage}{.20\linewidth}
         \begin{flushright}
             Lubbock, Texas
-        \end{flushright} 
+        \end{flushright}
     \end{minipage}
-% Program
-    \begin{minipage}{.75\linewidth} 
+    % Program
+    \begin{minipage}{.75\linewidth}
         \begin{flushleft}
             Master of Science in Data Science\\
-        \end{flushleft} 
+        \end{flushleft}
     \end{minipage}
     \hfill
-% Degree Awarded
+    % Degree Awarded
     \begin{minipage}{.20\linewidth}
         \begin{flushright}
-           (exp.) 2027 
-        \end{flushright} 
+            (exp.) 2027
+        \end{flushright}
     \end{minipage}
     \vspace{0.75em}
 
-% Texas Tech MA in Sociology
-% Institution Name
+    % Texas Tech MA in Sociology
+    % Institution Name
     \begin{minipage}{.75\linewidth}
         \begin{flushleft}
             \textbf{Texas Tech University}
-        \end{flushleft} 
+        \end{flushleft}
     \end{minipage}
-    \hfill 
-% Location
+    \hfill
+    % Location
     \begin{minipage}{.20\linewidth}
         \begin{flushright}
             Lubbock, Texas
-        \end{flushright} 
+        \end{flushright}
     \end{minipage}
-% Program
-    \begin{minipage}{.75\linewidth} 
+    % Program
+    \begin{minipage}{.75\linewidth}
         \begin{flushleft}
             Master of Arts in Sociology\\
-        \end{flushleft} 
+        \end{flushleft}
     \end{minipage}
     \hfill
-% Degree Awarded
+    % Degree Awarded
     \begin{minipage}{.20\linewidth} \begin{flushright}
-        2026
-    \end{flushright} \end{minipage}
-% Thesis info
+            2026
+        \end{flushright} \end{minipage}
+    % Thesis info
     \vspace{0.2em}
     Thesis: \textit{Religion and Subjective Well-Being: Comparing the Influence of Religious Beliefs and Practices}\\
     Committee: Dr. Jerome R. Koch (Chair),  Dr. Brandon Wagner, Dr. Seung-won Emily Choi.\\
     \vspace{0.75em}
 
-% DU MSS
-% Institution Name
+    % DU MSS
+    % Institution Name
     \begin{minipage}{.75\linewidth} \begin{flushleft}
-        \textbf{University of Dhaka}
-    \end{flushleft} \end{minipage}
+            \textbf{University of Dhaka}
+        \end{flushleft} \end{minipage}
     \hfill
-% Location 
+    % Location
     \begin{minipage}{.20\linewidth} \begin{flushright}
-        Dhaka, Bangladesh
-    \end{flushright} \end{minipage}
-% Program
+            Dhaka, Bangladesh
+        \end{flushright} \end{minipage}
+    % Program
     \begin{minipage}{.75\linewidth} \begin{flushleft}
-        Master of Social Sciences in Sociology\\
-    \end{flushleft} \end{minipage}
-    \hfill 
-% Degree Awarded
+            Master of Social Sciences in Sociology\\
+        \end{flushleft} \end{minipage}
+    \hfill
+    % Degree Awarded
     \begin{minipage}{.20\linewidth} \begin{flushright}
-        2024
-    \end{flushright} \end{minipage} 
+            2024
+        \end{flushright} \end{minipage}
     \vspace{0.75em}
 
-% DU BSS
-% Institution Name
+    % DU BSS
+    % Institution Name
     \begin{minipage}{.75\linewidth} \begin{flushleft}
-        \textbf{University of Dhaka}
-    \end{flushleft} \end{minipage}
+            \textbf{University of Dhaka}
+        \end{flushleft} \end{minipage}
     \hfill
-% Location
+    % Location
     \begin{minipage}{.20\linewidth} \begin{flushright}
-        Dhaka, Bangladesh
-    \end{flushright} \end{minipage}
-% Program
+            Dhaka, Bangladesh
+        \end{flushright} \end{minipage}
+    % Program
     \begin{minipage}{.75\linewidth} \begin{flushleft}
-        Bachelor of Social Sciences in Sociology\\
-    \end{flushleft} \end{minipage}
-    \hfill 
-% Degree Awarded
+            Bachelor of Social Sciences in Sociology\\
+        \end{flushleft} \end{minipage}
+    \hfill
+    % Degree Awarded
     \begin{minipage}{.20\linewidth} \begin{flushright}
-        2023
-    \end{flushright} \end{minipage} 
+            2023
+        \end{flushright} \end{minipage}
     \vspace{0.75em}
 
-% Research Interests
+    % Research Interests
     \section{Research Interests}
-
-    \textit{Well-Being; Religion; Culture; Disability; Life Course; Computational Methods}
-
-    \vspace{0.75em}
-
-% Publications
-\section{Publications}
-    Akter, Kazi Mahmuda and Tushi, Tanjum and Jahan Mily, Sabrina and Mohona, Rashenda Aziz and Anis, Samin and Chakraborty, Adittya Kishor and Tabassum, Elmee and \textbf{Islam, Tahmid Ul} and Akhi, Ozifatun Jannat and Nishe, Israt Sultana and Laxy, Badrun Nahar and Zerin, Sanjida Sultana and Roble, Abdiqani Jama and Hossain, Md. Imran and Ahmed, Sharmin and Azad, Salauddin Al (2020) \textit{RT-PCR Mediated Identification of SARS-CoV-2 Patients from Particular Regions of Bangladesh and the Multi-factorial Analysis Considering Their Pre and Post Infection Health Conditions}. Biotechnology Journal International, 24 (6). pp. 43-56. ISSN 2456-7051
+    \textit{
+        Health and Well-Being; Religion; Culture; Disability; Life Course; Quantitative and Computational Methods
+    }
+    % \textit{Well-Being; Religion; Culture; Disability; Life Course; Computational Methods}
 
     \vspace{0.75em}
 
-% CGS Internship
+    % Publications
+    \section{Publications}
+    Akter, Kazi Mahmuda, Tanjum Tushi, Sabrina Jahan Mily, Rashenda Aziz Mohona, Samin Anis, Adittya Kishor Chakraborty, Elmee Tabassum, \textbf{Tahmid Ul Islam}, Ozifatun Jannat Akhi, Israt Sultana Nishe, Badrun Nahar Laxy, Sanjida Sultana Zerin, Abdiqani Jama Roble, Md. Imran Hossain, Sharmin Ahmed, and Salauddin Al Azad. 2020. ``RT-PCR Mediated Identification of SARS-CoV-2 Patients from Particular Regions of Bangladesh and the Multi-factorial Analysis Considering Their Pre and Post Infection Health Conditions.'' \textit{Biotechnology Journal International} 24(6):43--56.
+
+    \vspace{0.75em}
+    % Manuscript in Preparation
+    \section{Manuscript in Preparation}
+    \textbf{Islam, Tahmid Ul}. Religion and Subjective Well-Being: Comparing the Influence of Religious Beliefs and Practices. \textit{Manuscript in preparation}.
+
+    \vspace{0.75em}
+
+    % CGS Internship
     \section{Research Internship}
     \begin{minipage} {.75\linewidth}
         \begin{flushleft}
             Research Intern
-        \end{flushleft} 
+        \end{flushleft}
     \end{minipage}
     \hfill
     \begin{minipage} {.20\linewidth}
         \begin{flushright}
             NOV 2021 - FEB 2022
-        \end{flushright} 
+        \end{flushright}
     \end{minipage}
     Center for Genocide Studies, University of Dhaka \\
     Responsibilities: Conducted archival research, i.e., manually collected and coded qualitative content from newspaper archives \\
     \vspace{0.75em}
 
-% TEACHING EXPERIENCES
+    % TEACHING EXPERIENCES
+    \Needspace{13\baselineskip}
     \section{Teaching}
 
-% TA at SASW, Texas Tech
-    \begin{minipage} {.75\linewidth} 
+    % TA at SASW, Texas Tech
+    \begin{minipage} {.75\linewidth}
         \begin{flushleft}
             Graduate Teaching Assistant
-        \end{flushleft} 
+        \end{flushleft}
     \end{minipage}
     \hfill
     \begin{minipage} {.20\linewidth}  \begin{flushright}
-        SEP 2024 - MAY 2026
-    \end{flushright} \end{minipage}
+            SEP 2024 - MAY 2026
+        \end{flushright} \end{minipage}
     Department of Sociology, Anthropology, and Social Work (SASW)\\
     Texas Tech University, Lubbock, Texas 79409\\
     \vspace{0.3em}
-    Courses:\\
-    \vspace{-0.75em}
-    \begin{description}%[font=$\bullet$]
-        \item{\textit{CRIM-4325: Criminological Theory}, Spring
-        2026. Professor: Dr. Martha Smithey}
-        \vspace{-0.75em}
-        \item{\textit{CRIM-3339: Crime Data Analysis}, Spring
-        2026. Professor: Dr. Martha Smithey}
-        \vspace{-0.75em}
-        \item{\textit{CRIM-2333: The U.S. Criminal Justice System}, Fall
-        2025. Instructor: Michael P. Lewis}
-        \vspace{-0.75em}
-        \item{\textit{SOC-1301: Introduction to Sociology}, Fall 2025. Instructor: Michael P. Lewis}
-        \vspace{-0.75em}
-        \item{\textit{SOC-3383: Alcohol, Drugs, and Society}, Summer
-        2025. Professor: Dr. Jerome Koch}
-        \vspace{-0.75em}
-        \item{\textit{SOC-3394: Contemporary Sociological Theories}, Summer
-        2025. Professor: Dr. Jeff Patterson}
-        \vspace{-0.75em}
-        \item{\textit{SOC-1301: Introduction to Sociology}, Spring
-        2025. Professor: Dr. Nadia Y. Flores-Yeffal}
-        \vspace{-0.75em}
-        \item{\textit{CRIM-4321: Global Crime}, Fall 2024. Professor:
-        Dr. Ori Swed}
-        \vspace{-0.75em}
-        \item{\textit{SOC-3340: Sociology of Terrorism}, Fall
-        2024. Professor: Dr. Ori Swed}
-        \vspace{-0.75em}
-    \end{description}
-    \vspace{0.3em}
-    \newpage
+    % Courses:\\
+    % \vspace{-0.75em}
+    % \begin{description}%[font=$\bullet$]
+    %     \item{\textit{CRIM-4325: Criminological Theory}, Spring
+    %     2026. Professor: Dr. Martha Smithey}
+    %     \vspace{-0.75em}
+    %     \item{\textit{CRIM-3339: Crime Data Analysis}, Spring
+    %     2026. Professor: Dr. Martha Smithey}
+    %     \vspace{-0.75em}
+    %     \item{\textit{CRIM-2333: The U.S. Criminal Justice System}, Fall
+    %     2025. Instructor: Michael P. Lewis}
+    %     \vspace{-0.75em}
+    %     \item{\textit{SOC-1301: Introduction to Sociology}, Fall 2025. Instructor: Michael P. Lewis}
+    %     \vspace{-0.75em}
+    %     \item{\textit{SOC-3383: Alcohol, Drugs, and Society}, Summer
+    %     2025. Professor: Dr. Jerome Koch}
+    %     \vspace{-0.75em}
+    %     \item{\textit{SOC-3394: Contemporary Sociological Theories}, Summer
+    %     2025. Professor: Dr. Jeff Patterson}
+    %     \vspace{-0.75em}
+    %     \item{\textit{SOC-1301: Introduction to Sociology}, Spring
+    %     2025. Professor: Dr. Nadia Y. Flores-Yeffal}
+    %     \vspace{-0.75em}
+    %     \item{\textit{CRIM-4321: Global Crime}, Fall 2024. Professor:
+    %     Dr. Ori Swed}
+    %     \vspace{-0.75em}
+    %     \item{\textit{SOC-3340: Sociology of Terrorism}, Fall
+    %     2024. Professor: Dr. Ori Swed}
+    %     \vspace{-0.75em}
+    % \end{description}
+    % \vspace{0.3em}
     Outcomes include:
-    \vspace{-0.75em}
     \begin{description} [font=$\bullet$]
         \item{Taught core topics of Sociology of Religion as part of an undergraduate Introduction to Sociology course}
-        \vspace{-0.75em}
         \item{Developed and applied grading rubrics for assignments and assessments, ensuring fair, consistent evaluation}
-        \vspace{-0.75em}
         \item{Provided personalized feedback on student work through written comments and one-on-one consultations}
-        \vspace{-0.75em}
     \end{description}
 
     \vspace{0.3em}
-
-% IELTS Instructor at Mentors'
-%\newpage
+    % \newpage
+    % IELTS Instructor at Mentors'
+    %\newpage
     \begin{minipage} {.75\linewidth} \begin{flushleft}
-        IELTS Instructor
-    \end{flushleft} \end{minipage}
+            IELTS Instructor
+        \end{flushleft} \end{minipage}
     \hfill
     \begin{minipage} {.20\linewidth}  \begin{flushright}
-        MAR 2023 – JUN 2024
-    \end{flushright} \end{minipage}
+            MAR 2023 – JUN 2024
+        \end{flushright} \end{minipage}
     Mentors’ Education, Mirpur Road, Kalabagan, Dhaka-1205, Bangladesh\\
- \vspace{0.3em}
+    \vspace{0.3em}
     Outcomes include:
-    \vspace{-0.75em}
     \begin{description} [font=$\bullet$]
         \item{Mentored 200+ students in person to prepare for the International English Language Testing System (IELTS)}
-        \vspace{-0.75em}
         \item{Provided personalized feedback to help students improve their writing and speaking skills}
-        \vspace{-0.75em}
     \end{description}
     \vspace{0.3em}
 
-% Experience at 10 MS
+    % Experience at 10 MS
     \begin{minipage} {.75\linewidth} \begin{flushleft}
-        Instructor, Content Reviewer, Quiz Creator
-    \end{flushleft} \end{minipage}
+            Instructor, Content Reviewer, Quiz Creator
+        \end{flushleft} \end{minipage}
     \hfill
     \begin{minipage} {.20\linewidth} \begin{flushright}
-        MAY 2019 – APR 2022
-    \end{flushright} \end{minipage}
+            MAY 2019 – APR 2022
+        \end{flushright} \end{minipage}
     10MS Limited, Mohakhali DOHS, Dhaka-1212, Bangladesh\\
- \vspace{0.3em}
+    \vspace{0.3em}
     Outcomes include:
-    \vspace{-0.75em}
     \begin{description} [font=$\bullet$]
         \item{Created 114+ asynchronous video tutorials on high school sociology}
-        \vspace{-0.75em}
         \item{Designed and developed supplemental educational materials, including presentation slides and quizzes}
-        \vspace{-0.75em}
         \item{Participated in the content quality assurance process to ensure accuracy and alignment with pedagogical standards}
-        \vspace{-0.75em}
     \end{description}
     \vspace{0.75em}
 
-% AWARDS And SCHOLARSHIPS
+    % AWARDS And SCHOLARSHIPS
     \section{Awards And Scholarships}
     \begin{description}[font=$\bullet$]
         \item{Graduate School Student Travel Funding of \$150, Texas Tech University - 2026}
-        \vspace{-0.75em}
         \item{Travel Award of \$200, Midwest Sociological Society - 2026}
-        \vspace{-0.75em}
         \item{SASW Conference Travel Funds Award of \$500, Texas Tech University - 2026}
-        \vspace{-0.75em}
         \item{Third Place at Texas Tech University 3-Minute Thesis Competition (Master’s Division) - 2025}
-        \vspace{-0.75em}
         \item{Graduate School Supplementary Scholarship of \$1,000 per year, for two years, Texas Tech University - 2024}
-        \vspace{-0.75em}
         \item{SASW Supplementary Scholarship of \$1,500 per semester, for four semesters, Texas Tech University - 2024}
-        \vspace{-0.75em}
         \item{Tajuddin Ahmad Trust Fund Award, University of Dhaka - 2019}
-        \vspace{-0.75em}
-        \item{First Place at Essay Competition on Environment and Ecology, Forest Department, Government of Bangladesh - 2019}
+        % \vspace{-0.75em}
+        % \item{First Place at Essay Competition on Environment and Ecology, Forest Department, Government of Bangladesh - 2019}
     \end{description}
     \vspace{0.75em}
 
-% CONF PRESENTATION
+    % CONF PRESENTATION
     \section{Presentations And Conferences}
     \begin{description}
         \item{\textbf{Tahmid Ul Islam}. Religion and Subjective Well-Being: Comparing the Influence of Religious Beliefs and Practices. Presented at the
-        2026 Graduate Poster Competition, Texas Tech University
-        Graduate Student Research Conference (Poster Session), Lubbock, Texas, March 3,
-        2026.}
-        \vspace{-0.75em}
+            2026 Graduate Poster Competition, Texas Tech University
+            Graduate Student Research Conference (Poster Session), Lubbock, Texas, March 3,
+            2026.}
 
         \item{\textbf{Tahmid Ul Islam}. Religion and Subjective Well-Being: Comparing the Influence of Religious Beliefs and Practices. Presented at
-        the 2026 Midwest Sociological Society Annual Meeting (3-Minute Thesis Competition), St. Louis, Missouri, March 28, 2026.}
-        \vspace{-0.75em}
+            the 2026 Midwest Sociological Society Annual Meeting (3-Minute Thesis Competition), St. Louis, Missouri, March 28, 2026.}
 
         \item{\textbf{Tahmid Ul Islam}. Religion and Subjective Well-Being: Comparing the Influence of Religious Beliefs and Practices. Presented at
-        the 2026 Midwest Sociological Society Annual Meeting (Poster Session), St. Louis, Missouri, March 27, 2026.}
-        \vspace{-0.75em}
+            the 2026 Midwest Sociological Society Annual Meeting (Poster Session), St. Louis, Missouri, March 27, 2026.}
 
         \item{\textbf{Tahmid Ul Islam}. Religion and Subjective Well-Being: Comparing the Influence of Religious Beliefs and Practices. Presented at
-        the 2026 Midwest Sociological Society Annual Meeting (Paper Session), St. Louis, Missouri, March 27, 2026.}
-        \vspace{-0.75em}
+            the 2026 Midwest Sociological Society Annual Meeting (Paper Session), St. Louis, Missouri, March 27, 2026.}
         \item{\textbf{Tahmid Ul Islam}. The Impact of Religiosity on Subjective
-        Well-being: Analyzing the Comparative Role of Religious Beliefs
-        and Practices from the World Values Survey. Presented at the Texas
-        Tech University Graduate School’s 15\textsuperscript{th} Annual Arts and Humanities
-        Graduate Student Research Conference (Paper Session), Lubbock, Texas, November 12,
-        2025.}
-        \vspace{-0.75em}
+            Well-being: Analyzing the Comparative Role of Religious Beliefs
+            and Practices from the World Values Survey. Presented at the Texas
+            Tech University Graduate School’s 15\textsuperscript{th} Annual Arts and Humanities
+            Graduate Student Research Conference (Paper Session), Lubbock, Texas, November 12,
+            2025.}
         \item{\textbf{Tahmid Ul Islam}. The Impact of Religiosity on Subjective
-        Well-being: Analyzing the Comparative Role of Religious Beliefs
-        and Practices from the World Values Survey. Presented at the
-        Mid-South Sociological Association’s 51\textsuperscript{st} Annual Conference (Paper Session), North
-        Augusta, South Carolina, October 16, 2025.}
-        \vspace{-0.75em}
+            Well-being: Analyzing the Comparative Role of Religious Beliefs
+            and Practices from the World Values Survey. Presented at the
+            Mid-South Sociological Association’s 51\textsuperscript{st} Annual Conference (Paper Session), North
+            Augusta, South Carolina, October 16, 2025.}
         \item{\textbf{Tahmid Ul Islam}. The Impact of Religiosity on Subjective
-        Well-being: Analyzing the Comparative Role of Religious Beliefs
-        and Practices from the World Values Survey. Presented at the
-        3-Minute Thesis Competition Final Round, Lubbock, Texas, October
-        3, 2025.}
+            Well-being: Analyzing the Comparative Role of Religious Beliefs
+            and Practices from the World Values Survey. Presented at the
+            3-Minute Thesis Competition Final Round, Lubbock, Texas, October
+            3, 2025.}
     \end{description}
     \vspace{0.75em}
 
-% PROFESSIONAL MEMBERSHIP
+    % PROFESSIONAL MEMBERSHIP
     \section{Membership In Professional Organizations}
     \begin{description}[font=$\bullet$]
         \item{Midwest Sociological Society (MSS) (JAN 2026 – Present)}
-        \vspace{-0.75em}
         \item{Association for the Sociology of Religion (ASR) (OCT 2025 – Present)}
-        \vspace{-0.75em}
         \item{Mid-South Sociological Association (MSSA) (SEP 2025 – Present)}
     \end{description}
     \vspace{0.75em}
 
-% TRAINING & CERTIFICATES
-
+    % TRAINING & CERTIFICATES
     \section{Training}
     \begin{description}[font=$\bullet$]
-        \item{\LaTeX\ for Professional Publications, Udemy - January 2026}
-        \vspace{-0.75em}
-        \item{Strategies for Critical Reading and Source Integration, Graduate Writing Center, Texas Tech University - October 2025}
-        \vspace{-0.75em}
-        \item{Half-Day Paraphrasing Studio, Graduate Writing Center, Texas Tech University - September 2025}
-        \vspace{-0.75em}
+        % \item{Introduction to Git, DataCamp - Aug 2026}
+        % \vspace{-0.75em}
+        % \item{Rock Your LinkedIn Profile, LinkedIn Learning - Aug 2026}
+        % \vspace{-0.75em}
+        \item{Git Essential Training, LinkedIn Learning - Aug 2026}
+        \item{Intermediate SQL, DataCamp - Jan 2026}
+        \item{\LaTeX\ for Professional Publications, Udemy - Jan 2026}
+        \item{Strategies for Critical Reading and Source Integration, Graduate Writing Center, Texas Tech University - Oct 2025}
+        \item{Half-Day Paraphrasing Studio, Graduate Writing Center, Texas Tech University - Sep 2025}
         \item{Foundational Writing Skills Intensive, Graduate Writing Center, Texas Tech University - Summer 2025}
-        \vspace{-0.75em}
         \item{International Teaching Assistant Workshop, Texas Tech University - Summer 2024}
     \end{description}
     \vspace{0.75em}
 
-% TECHNICAL SKILLS
+    % TECHNICAL SKILLS
     \section{Digital Skills}
-    \faRProject; \texttt{Stata}; \LaTeX ; \textsc{Vim}
+    \texttt{R (tidyverse)}; \texttt{Python (Pandas, Seaborn)}; \texttt{Stata}; \texttt{PostgreSQL}; \LaTeX
     \vspace{0.75em}
 
-% LANGUAGES
+    % LANGUAGES
     \section{Languages}
     English (Fluent); Bengali (Native)
     \vspace{0.75em}
@@ -402,13 +395,13 @@
         jerome.koch@ttu.edu\\
     \end{quote}
 
-    \begin{quote}
-        Patricia Maloney, PhD\\
-        Associate Professor\\
-        Department of Sociology, Anthropology, and Social Work\\
-        Texas Tech University\\
-        Patricia.Maloney@ttu.edu\\
-    \end{quote}
+    % \begin{quote}
+    %     Patricia Maloney, PhD\\
+    %     Associate Professor\\
+    %     Department of Sociology, Anthropology, and Social Work\\
+    %     Texas Tech University\\
+    %     Patricia.Maloney@ttu.edu\\
+    % \end{quote}
 
     \begin{quote}
         Brandon Wagner, PhD\\
@@ -426,12 +419,12 @@
         seungwon.e.choi@ttu.edu\\
     \end{quote}
 
-    \begin{quote}
-        J. Dalton Stevens, PhD\\
-        Assistant Professor\\
-        Department of Sociology, Anthropology, and Social Work\\
-        Texas Tech University\\
-        Dalton.Stevens@ttu.edu\\
-    \end{quote}
+    % \begin{quote}
+    %     J. Dalton Stevens, PhD\\
+    %     Assistant Professor\\
+    %     Department of Sociology, Anthropology, and Social Work\\
+    %     Texas Tech University\\
+    %     Dalton.Stevens@ttu.edu\\
+    % \end{quote}
 
 \end{document}
