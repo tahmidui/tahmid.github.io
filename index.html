@@ -48,6 +48,60 @@
 
     <link rel="stylesheet" href="assets/css/custom.css" />
 
+    <!-- Reflow safeguards: retain the template's sizes, spacing, and image crops. -->
+    <style id="responsive-safeguards">
+      .banner.style1 .content,
+      #first > .content,
+      .research-intro-grid > *,
+      .skill-card,
+      .skill-card > span,
+      .experience-role-heading > div,
+      .contact-email {
+        min-width: 0;
+      }
+
+      .education-header-split h2,
+      .experience-header-split > div > p {
+        white-space: normal;
+      }
+
+      .education-degree-content,
+      .experience-content,
+      .skill-card > span,
+      .contact-email a {
+        overflow-wrap: anywhere;
+      }
+
+      .banner .button.big {
+        max-width: 100%;
+        min-width: 0;
+      }
+
+      /* Expanded descriptions must grow with their text, including at zoom. */
+      .interactive-skill.is-active .skill-description {
+        max-height: none;
+      }
+
+      /* Keep the existing menu usable in short landscape/zoomed viewports. */
+      @media screen and (max-width: 1100px) {
+        .site-nav-links a {
+          flex-shrink: 0;
+        }
+      }
+
+      /* Long document labels can wrap without changing desktop buttons. */
+      @media screen and (max-width: 480px) {
+        #cv-modal .button {
+          height: auto;
+          min-height: 3.75em;
+          padding-block: 0.75em;
+          line-height: 1.5;
+          white-space: normal;
+          overflow-wrap: anywhere;
+        }
+      }
+    </style>
+
     <noscript>
       <link rel="stylesheet" href="assets/css/noscript.css" />
     </noscript>
