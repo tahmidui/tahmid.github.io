@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1789407870.87569 "/Users/tahmid/Library/CloudStorage/OneDrive-TexasTechUniversity/lifeOS/1-Projects/personal-website/docs/academic-cv-TI.tex" "academic-cv-TI.pdf" "academic-cv-TI" 1789407871.84987 0
-  "/Users/tahmid/Library/CloudStorage/OneDrive-TexasTechUniversity/lifeOS/1-Projects/personal-website/docs/academic-cv-TI.tex" 1789407870.59654 17860 f6f2eb7a66fbd2959c5f55e3b2ece90b ""
+["pdflatex"] 1789411106.09676 "/Users/tahmid/Library/CloudStorage/OneDrive-TexasTechUniversity/lifeOS/1-Projects/personal-website/docs/academic-cv-TI.tex" "academic-cv-TI.pdf" "academic-cv-TI" 1789411106.70827 0
+  "/Users/tahmid/Library/CloudStorage/OneDrive-TexasTechUniversity/lifeOS/1-Projects/personal-website/docs/academic-cv-TI.tex" 1789411105.88074 18349 78d4482b3e2733c647a04d62e4e21813 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -96,9 +96,9 @@
   "/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1778096393 5573038 b99aad5e4898a9034e953632f940512b ""
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1774209607 3636776 dc5fa9b6b1453b9d196cd42edf876004 ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "academic-cv-TI.aux" 1789407871.75361 1877 8d8e801be29072900e017e1dd2560e18 "pdflatex"
-  "academic-cv-TI.out" 1789407871.75445 1851 f917603bf34a91464408553eb540a3fd "pdflatex"
-  "academic-cv-TI.tex" 1789407870.59654 17860 f6f2eb7a66fbd2959c5f55e3b2ece90b ""
+  "academic-cv-TI.aux" 1789411106.6531 1879 46b064dca4f2bc46b56366b6121d9d47 "pdflatex"
+  "academic-cv-TI.out" 1789411106.65355 1861 af62bc9ccc8697ea78deb8c0153dd177 "pdflatex"
+  "academic-cv-TI.tex" 1789411105.88074 18349 78d4482b3e2733c647a04d62e4e21813 ""
   (generated)
   "academic-cv-TI.aux"
   "academic-cv-TI.log"
