@@ -1,5 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1789361478.25417 "academic-cv-TI.tex" "academic-cv-TI.pdf" "academic-cv-TI" 1789361479.1791 0
+["pdflatex"] 1789361543.19975 "/Users/tahmid/Library/CloudStorage/OneDrive-TexasTechUniversity/lifeOS/1-Projects/personal-website/docs/academic-cv-TI.tex" "academic-cv-TI.pdf" "academic-cv-TI" 1789361544.00401 0
+  "/Users/tahmid/Library/CloudStorage/OneDrive-TexasTechUniversity/lifeOS/1-Projects/personal-website/docs/academic-cv-TI.tex" 1789361542.90957 17290 b7cd4fa9c25721c9a9810111c17a0a77 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -95,9 +96,9 @@
   "/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1778096393 5573038 b99aad5e4898a9034e953632f940512b ""
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1774209607 3636776 dc5fa9b6b1453b9d196cd42edf876004 ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "academic-cv-TI.aux" 1789361479.06301 1762 114901acf216bb393e0594db9cea2c54 "pdflatex"
-  "academic-cv-TI.out" 1789361479.06431 1723 d00d07330fc6932310aee1b796b127f1 "pdflatex"
-  "academic-cv-TI.tex" 1789361472.60492 17292 bc199fc5cafd7843d592a109a30b52d1 ""
+  "academic-cv-TI.aux" 1789361543.92485 1762 114901acf216bb393e0594db9cea2c54 "pdflatex"
+  "academic-cv-TI.out" 1789361543.9254 1723 d00d07330fc6932310aee1b796b127f1 "pdflatex"
+  "academic-cv-TI.tex" 1789361542.90957 17290 b7cd4fa9c25721c9a9810111c17a0a77 ""
   (generated)
   "academic-cv-TI.aux"
   "academic-cv-TI.log"
