@@ -1,0 +1,15 @@
+{
+  "id": "/workout-log/",
+  "name": "Tahmid's Workout Log",
+  "short_name": "Tahmid’s Log",
+  "description": "Tahmid's personal training log",
+  "start_url": "/workout-log/",
+  "scope": "/workout-log/",
+  "display": "standalone",
+  "background_color": "#FAFAFF",
+  "theme_color": "#1C1C1C",
+  "icons": [
+    {"src":"./icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"./icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}

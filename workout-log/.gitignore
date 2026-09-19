@@ -1,0 +1,11 @@
+.DS_Store
+js/config.js
+config.js
+.env
+.env.*
+!.env.example
+backups/
+*.csv
+*backup*.json
+__pycache__/
+.test-artifacts/
