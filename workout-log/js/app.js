@@ -4,6 +4,7 @@ import {id,timestamp,localDate,niceDate,dateObject,DAY_NAMES,todayPlan,steps,pre
 import {csv,backup,download} from './export.js';
 import {previewCSV} from './import.js';
 import {previewBackup} from './backup.js';
+import * as Pin from './pin.js';
 const $=s=>document.querySelector(s), main=$('#main');
 const esc=(s='')=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const toTitleCase=(value='')=>String(value)
@@ -15,7 +16,7 @@ const toTitleCase=(value='')=>String(value)
     return normalized.split('-').map(part => part ? part.charAt(0).toUpperCase() + part.slice(1).toLowerCase() : part).join('-');
   })
   .join(' ');
-let data, view='today', activeId=null, cursor=0, editingId=null, returnView='history', timer=null, busy=false, demoDate='', ready=null;
+let data, view='today', activeId=null, cursor=0, editingId=null, returnView='history', timer=null, busy=false, demoDate='', ready=null, locked=false;
 let csvPreview=null, csvFileName='', jsonPreview=null, jsonContents='', jsonFileName='', resetStage=0, resetRevision=null;
 const resetDialog=$('#reset-dialog');
 const now=()=>DB.demo && demoDate?dateObject(demoDate):new Date();
@@ -38,7 +39,9 @@ function nav(){
   $('#nav').hidden=!data;
   $('#nav').innerHTML=Object.entries(navigationIcons).map(([v,name])=>`<button data-view="${v}" ${(view===v||(view==='workout'||view==='cardio')&&v==='today'||(view==='import'||view==='restore')&&v==='data')?'aria-current="page"':''}>${icon(name)}<span>${v[0].toUpperCase()+v.slice(1)}</span></button>`).join('');
 }
-function render(){clearInterval(timer);nav();if(!data)return auth();({today:home,workout:workout,history:history,routine:routine,schedule:schedule,data:dataView,import:importView,restore:restoreView,settings:settings,edit:edit,cardio:cardio}[view]||home)();decorate();}
+function render(){clearInterval(timer);if(locked){renderLock();return;}nav();if(!data)return auth();({today:home,workout:workout,history:history,routine:routine,schedule:schedule,data:dataView,import:importView,restore:restoreView,settings:settings,edit:edit,cardio:cardio}[view]||home)();decorate();}
+function renderLock(){document.body.dataset.locked='true';$('#header-date').textContent='';$('#settings-button').hidden=true;$('#nav').hidden=true;$('.app-status').hidden=true;document.querySelector('footer').hidden=true;main.innerHTML=`<section class="lock-screen"><div class="lock-symbol">${icon('lock')}</div><p class="eyebrow">PRIVATE APP</p><h1>Tahmid’s Workout Log</h1><p class="muted">Enter passcode</p><form id="unlock-form" class="pin-form"><input id="unlock-pin" name="pin" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" autocomplete="one-time-code" aria-label="Four digit passcode" required><div class="pin-dots" aria-hidden="true">○ ○ ○ ○</div><button class="primary" type="submit">Unlock</button></form>${button('Sign in with account instead','recover','','secondary')}</section>`;$('#unlock-pin').focus();}
+function unlock(){locked=false;document.body.dataset.locked='false';$('.app-status').hidden=false;document.querySelector('footer').hidden=false;render();}
 function go(v){view=v;ready=null;message();render();main.focus();window.scrollTo(0,0);}
 function home(){
   const plan=todayPlan(data,now()), w=data.workouts.find(w=>w.status==='in_progress');
@@ -106,7 +109,7 @@ function routine(){
   main.innerHTML=`<p class="eyebrow">${icon('list-ordered')} YOUR TRAINING PLAN</p><h1>${toTitleCase('Your routine')}</h1><p class="muted">Changes apply to new workouts. Existing sessions keep their original routine.</p>${exercises.map((e,i)=>`<details class="card editor"><summary>${icon('grip-vertical')}<span class="routine-summary"><span>${esc(e.name)} ${!e.active?'· off':''}</span><small>${e.exercise_type==='warmup'?'2 minutes · timed':`${e.target_sets} sets × ${e.target_reps} reps`}</small></span>${icon('pencil')}</summary><form class="exercise-form" data-id="${e.id}"><label>Name<input name="name" maxlength="160" required value="${esc(e.name)}"></label>${e.exercise_type==='warmup'?'<p class="muted">Timed warm-up · 120 seconds · any warm-up activity</p>':`<div class="fields"><label>Sets<input name="sets" type="number" min="1" max="20" required value="${e.target_sets}"></label><label>Target reps<input name="reps" type="number" min="1" max="1000" required value="${e.target_reps}"></label></div>`}<label class="row" style="margin-top:16px"><input name="active" type="checkbox" ${e.active?'checked':''}>Enabled</label><button class="primary">Save exercise</button></form><div class="controls">${button('Move up','move',`data-id="${e.id}" data-direction="-1" ${i===0?'disabled':''}`,'text')}${button('Move down','move',`data-id="${e.id}" data-direction="1" ${i===exercises.length-1?'disabled':''}`,'text')}</div></details>`).join('')}<details class="card"><summary>Add an exercise</summary><form id="add-exercise" class="stack"><label>Name<input name="name" required maxlength="160"></label><label>Type<select name="type"><option value="strength">Weighted strength</option><option value="bodyweight">Bodyweight / assisted</option></select></label><div class="fields"><label>Sets<input name="sets" type="number" min="1" max="20" value="3" required></label><label>Target reps<input name="reps" type="number" min="1" max="1000" value="8" required></label></div><button class="primary">Add exercise</button></form></details>`;
 }
 function schedule(){
-  main.innerHTML=`<p class="eyebrow">${icon('calendar-days')} YOUR WEEK</p><h1>A rhythm that fits.</h1><p class="muted">Make-up days offer the previous day’s missed strength session. Saved workouts keep both dates.</p><form id="schedule-form" class="card">${[...data.weekly_schedule].sort((a,b)=>a.day_of_week-b.day_of_week).map(s=>`<details class="schedule-row"><summary><span class="day-abbrev">${DAY_NAMES[s.day_of_week].slice(0,3)}</span>${icon(s.workout_type==='strength'?'dumbbell':s.workout_type==='cardio'?'activity':s.makeup_for_day!==null?'calendar-clock':'moon')}<span class="schedule-summary">${s.workout_type[0].toUpperCase()+s.workout_type.slice(1)}${s.makeup_for_day!==null?'<small>Make-up available</small>':s.workout_type==='cardio'?`<small>${s.cardio_duration_minutes} minutes</small>`:''}</span>${icon('chevron-down')}</summary><div class="schedule-options"><label>Session<select name="type_${s.day_of_week}">${['strength','cardio','rest'].map(t=>`<option value="${t}" ${s.workout_type===t?'selected':''}>${t[0].toUpperCase()+t.slice(1)}</option>`).join('')}</select></label><label>Cardio minutes<input name="duration_${s.day_of_week}" type="number" min="1" max="1440" value="${s.cardio_duration_minutes||30}" required></label><label>Offer missed strength from<select name="makeup_${s.day_of_week}"><option value="">None</option>${DAY_NAMES.map((n,i)=>i!==(s.day_of_week+6)%7?'':`<option value="${i}" ${s.makeup_for_day===i?'selected':''}>${n}</option>`).join('')}</select></label></div></details>`).join('')}<button class="primary">Save schedule</button></form>`;
+  main.innerHTML=`<p class="eyebrow">${icon('calendar-days')} YOUR WEEK</p><h1>A rhythm that fits</h1><p class="muted">Make-up days offer the previous day’s missed strength session. Saved workouts keep both dates.</p><form id="schedule-form" class="card">${[...data.weekly_schedule].sort((a,b)=>a.day_of_week-b.day_of_week).map(s=>`<details class="schedule-row"><summary><span class="day-abbrev">${DAY_NAMES[s.day_of_week].slice(0,3)}</span>${icon(s.workout_type==='strength'?'dumbbell':s.workout_type==='cardio'?'activity':s.makeup_for_day!==null?'calendar-clock':'moon')}<span class="schedule-summary">${s.workout_type[0].toUpperCase()+s.workout_type.slice(1)}${s.makeup_for_day!==null?'<small>Make-up available</small>':s.workout_type==='cardio'?`<small>${s.cardio_duration_minutes} minutes</small>`:''}</span>${icon('chevron-down')}</summary><div class="schedule-options"><label>Session<select name="type_${s.day_of_week}">${['strength','cardio','rest'].map(t=>`<option value="${t}" ${s.workout_type===t?'selected':''}>${t[0].toUpperCase()+t.slice(1)}</option>`).join('')}</select></label><label>Cardio minutes<input name="duration_${s.day_of_week}" type="number" min="1" max="1440" value="${s.cardio_duration_minutes||30}" required></label><label>Offer missed strength from<select name="makeup_${s.day_of_week}"><option value="">None</option>${DAY_NAMES.map((n,i)=>i!==(s.day_of_week+6)%7?'':`<option value="${i}" ${s.makeup_for_day===i?'selected':''}>${n}</option>`).join('')}</select></label></div></details>`).join('')}<button class="primary">Save schedule</button></form>`;
 }
 function dataView(){
   main.innerHTML=`<p class="eyebrow">${icon('database')} YOUR DATA</p><h1>Your work.<br>Your data.</h1><section class="card"><h2>Back up & restore</h2><p class="muted">${data.workouts.length} workouts · ${data.workout_sets.length} set records.</p><div class="export-actions">${button('Export CSV','csv','','export-action')}<p>Download workout records for analysis.</p>${button('Export JSON Backup','json','','export-action')}<p>Create a complete backup of the app.</p>${button('Import CSV','choose-csv',DB.demo?'':'disabled','export-action')}<p>Restore or add historical workout records. Preview before saving.</p>${button('Import JSON Backup','choose-json',DB.demo?'':'disabled','export-action')}<p>Restore a complete application backup, including routine and schedule.</p></div><input id="json-file" type="file" accept=".json,application/json" hidden aria-label="Choose JSON backup"><input id="csv-file" type="file" accept=".csv,text/csv" hidden aria-label="Choose workout CSV"><p class="muted import-footnote">CSV adds historical records. JSON restores a complete backup and replaces the current log after your confirmation.</p>${!DB.demo?'<p class="muted">Import and restore are currently available in Local Demo Mode only.</p>':''}</section><section class="danger-zone" aria-labelledby="danger-heading"><p class="eyebrow">${icon('triangle-alert')} DATA MANAGEMENT</p><h2 id="danger-heading">Reset this app</h2><p class="muted">Remove workout history, logged sets, cardio records, progression state, progress events, routine customizations, and schedule customizations. The default routine and schedule will be restored. Export a backup first.</p>${button('Reset Everything','reset-open','','danger-button')}</section>`;
@@ -145,8 +148,8 @@ function resetContent(stage){
 }
 function syncResetButton(){const el=$('#reset-final');if(el)el.disabled=busy||resetStage!==2||$('#reset-word').value!=='RESET';}
 function closeReset(){resetDialog.close();resetStage=0;resetRevision=null;resetDialog.innerHTML='';}
-function settings(){ main.innerHTML=`<p class="eyebrow">${icon('settings')} PREFERENCES</p><h1>Settings.</h1><section class="card"><h2>${DB.demo?'Local storage':'Connected database'}</h2><p class="muted">${DB.demo?'Your data stays in this browser on this address. Clearing site data removes it. Export a backup before switching browsers or connecting a database.':'Workouts are stored in your connected database. An internet connection is required to save. Sign in again after a page reload.'}</p><p class="muted">Weight unit: lb. You choose every weight; the app never calculates the next increment.</p>${!DB.demo?button('Sign out','signout'):''}</section>${DB.demo?`<section class="card"><h2>Preview a date</h2><p class="muted">Use a different date to preview workout planning while testing locally. Logging timestamps remain automatic. Reload returns to today.</p><form id="demo-date-form"><label>Calendar date<input type="date" name="date" value="${demoDate}" required></label><button class="primary">Use selected date</button></form>${button('Use today','real-date')}</section>`:''}<section class="card"><h2>On your iPhone</h2><p class="muted">Open the app in Safari, tap Share, then Add to Home Screen. Installation and offline caching require HTTPS (or localhost on this computer).</p></section>`; }
-function auth(){main.innerHTML=`<section class="card"><p class="eyebrow">Tahmid’s personal training log</p><h1>${toTitleCase('Welcome back')}</h1><form id="auth-form" class="auth"><label>Email<input type="email" name="email" autocomplete="email" required></label><label>Password<input type="password" name="password" autocomplete="current-password" minlength="8" required></label><button class="primary" name="intent" value="signin">Sign in</button><button name="intent" value="signup">Create account</button></form></section>`;}
+function settings(){ main.innerHTML=`<p class="eyebrow">${icon('settings')} PREFERENCES</p><h1>Settings.</h1><section class="card"><h2>${DB.demo?'Local storage':'Connected database'}</h2><p class="muted">${DB.demo?'Your data stays in this browser on this address. Clearing site data removes it. Export a backup before switching browsers or connecting a database.':'Workouts are stored in your connected database. An internet connection is required to save. Sign in again after a page reload.'}</p><p class="muted">Weight unit: lb. You choose every weight; the app never calculates the next increment.</p>${!DB.demo?button('Sign out','signout'):''}</section><section class="card"><h2>App Passcode</h2><p class="muted">${Pin.configured()?'A local passcode protects this app when it is inactive.':'Add an optional local passcode for this device. Supabase still protects your account and workout data.'}</p><form id="pin-form" class="pin-form"><label>Enter new passcode<input name="pin" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" autocomplete="new-password" required></label><label>Confirm passcode<input name="confirm" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" autocomplete="new-password" required></label><button class="primary">${Pin.configured()?'Change passcode':'Set 4-digit passcode'}</button></form>${Pin.configured()?button('Lock now','lock-now','','secondary'):''}</section>${DB.demo?`<section class="card"><h2>Preview a date</h2><p class="muted">Use a different date to preview workout planning while testing locally. Logging timestamps remain automatic. Reload returns to today.</p><form id="demo-date-form"><label>Calendar date<input type="date" name="date" value="${demoDate}" required></label><button class="primary">Use selected date</button></form>${button('Use today','real-date')}</section>`:''}<section class="card"><h2>On your iPhone</h2><p class="muted">Open the app in Safari, tap Share, then Add to Home Screen. Installation and offline caching require HTTPS (or localhost on this computer).</p></section>`; }
+function auth(){main.innerHTML=`<section class="card"><h1>${toTitleCase('Welcome back')}</h1><form id="auth-form" class="auth"><label>Email<input type="email" name="email" autocomplete="email" required></label><label>Password<input type="password" name="password" autocomplete="current-password" minlength="8" required></label><button class="primary" name="intent" value="signin">Sign in</button></form></section>`;}
 async function action(name,el){
   if(name==='choose-json')$('#json-file').click();
   if(name==='cancel-restore'){jsonPreview=null;jsonContents='';jsonFileName='';go('data');}
@@ -181,6 +184,12 @@ async function action(name,el){
   if(name==='csv')download(`tahmid-workouts-${localDate()}.csv`,csv(data),'text/csv;charset=utf-8');
   if(name==='json')download(`tahmid-workout-backup-${localDate()}.json`,backup(data),'application/json');
   if(name==='real-date'){demoDate='';go('today');}
+  if(name==='lock-now'){locked=true;render();}
+  if(name==='recover'){
+    Pin.clear();
+    if(DB.demo){locked=false;render();message('Passcode cleared on this device.');}
+    else{locked=false;await DB.signOut();data=null;render();message('Sign in with your account to recover access, then set a new passcode.');}
+  }
   if(name==='signout'){await DB.signOut();data=null;render();}
   if(name==='move'){
     await commit(d=>{const list=d.exercises.sort((a,b)=>a.position-b.position), i=list.findIndex(e=>e.id===el.dataset.id), j=i+Number(el.dataset.direction);if(j<0||j>=list.length)return;[list[i],list[j]]=[list[j],list[i]];list.forEach((e,k)=>e.position=k+1);});render();
@@ -196,8 +205,15 @@ async function submit(form,submitter){
   }
 
   if(form.id==='auth-form'){
-    if(submitter?.value==='signup'){await DB.signUp(f.get('email').trim(),f.get('password'));message('Account created. Confirm your email if required, then sign in.');}
-    else{data=await DB.signIn(f.get('email').trim(),f.get('password'));go('today');}return;
+    data=await DB.signIn(f.get('email').trim(),f.get('password'));locked=Pin.configured();go('today');return;
+  }
+  if(form.id==='unlock-form'){
+    if(!await Pin.verify(f.get('pin')))throw new Error('That passcode is incorrect.');
+    unlock();return;
+  }
+  if(form.id==='pin-form'){
+    if(f.get('pin')!==f.get('confirm'))throw new Error('Passcodes do not match.');
+    await Pin.set(f.get('pin'));render();message('Passcode saved on this device.');return;
   }
   if(form.id==='set-form')return record('completed',form);
   if(form.id==='cardio-form'||form.id==='edit-cardio-form'){
@@ -222,7 +238,7 @@ async function submit(form,submitter){
   if(form.id==='demo-date-form'){demoDate=f.get('date');go('today');message(`Preview date: ${niceDate(demoDate)}. Reload to return to today.`);}
 }
 function decorate(){
-  const actions={start:'play',extra:'plus',resume:'play',continue:'arrow-right',back:'arrow-left',skip:'skip-forward',warmup:'check',timer:'timer',finish:'check',previous:'undo-2','edit-set':'pencil','edit-cardio':'pencil','cancel-edit':'arrow-left',csv:'download',json:'file-json','real-date':'calendar-days',signout:'log-out',move:'grip-vertical','choose-csv':'upload','confirm-import':'upload','cancel-import':'arrow-left','reset-open':'rotate-ccw','choose-json':'upload','confirm-restore':'rotate-ccw','cancel-restore':'arrow-left'};
+  const actions={start:'play',extra:'plus',resume:'play',continue:'arrow-right',back:'arrow-left',skip:'skip-forward',warmup:'check',timer:'timer',finish:'check',previous:'undo-2','edit-set':'pencil','edit-cardio':'pencil','cancel-edit':'arrow-left',csv:'download',json:'file-json','real-date':'calendar-days',signout:'log-out','lock-now':'lock',recover:'log-in',move:'grip-vertical','choose-csv':'upload','confirm-import':'upload','cancel-import':'arrow-left','reset-open':'rotate-ccw','choose-json':'upload','confirm-restore':'rotate-ccw','cancel-restore':'arrow-left'};
   main.querySelectorAll('button').forEach(b=>{
     if(b.querySelector('svg'))return;
     const name=actions[b.dataset.action]||(b.closest('form')?.id==='auth-form'?'arrow-right':'check');
@@ -246,11 +262,12 @@ document.addEventListener('change',e=>{
   if(e.target.id==='csv-file')guard(()=>selectCSV(e.target.files[0]));
   if(e.target.name==='duplicates')updateImportButton();
 });
-document.addEventListener('input',e=>{if(e.target.id==='reset-word'){syncResetButton();$('#reset-error').textContent='';}});
+document.addEventListener('input',e=>{if(e.target.id==='reset-word'){syncResetButton();$('#reset-error').textContent='';}if(e.target.matches('input[inputmode=numeric]'))e.target.value=e.target.value.replace(/\D/g,'').slice(0,4);});
 resetDialog.addEventListener('cancel',e=>{e.preventDefault();if(!busy)closeReset();});
-window.addEventListener('storage',()=>{if(DB.demo)message('Data changed in another tab. Reload to see the latest saved entries.');});
+let hiddenAt=0;
+document.addEventListener('visibilitychange',()=>{if(document.hidden){hiddenAt=Date.now();return;}if(data&&Pin.configured()&&hiddenAt&&Date.now()-hiddenAt>=Pin.lockAfter()){locked=true;render();}hiddenAt=0;});
 async function boot(){
-  try{data=await DB.initialize();render();}catch(e){main.innerHTML='<section class="card"><h2>Could not open the log</h2><p>Your saved data has not been replaced. Check configuration or browser storage, then reload.</p></section>';message(e.message);}
+  try{data=await DB.initialize();locked=Boolean(data&&Pin.configured());render();}catch(e){main.innerHTML='<section class="card"><h2>Could not open the log</h2><p>Your saved data has not been replaced. Check configuration or browser storage, then reload.</p></section>';message(e.message);}
   if('serviceWorker' in navigator){
     const local=['localhost','127.0.0.1','[::1]'].includes(location.hostname);
     if(!local)navigator.serviceWorker.register(new URL('/workout-log/sw.js',location.origin),{scope:'/workout-log/'}).catch(()=>message('Offline installation is unavailable. The app still works while connected.'));

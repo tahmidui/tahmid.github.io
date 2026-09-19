@@ -43,7 +43,7 @@ const defaultExercises = [
   {name:'Lat Pulldown', exercise_type:'strength', target_sets:3, target_reps:8, duration_seconds:null, progression_enabled:true, position:5, active:true},
   {name:'Rotary Shoulder', exercise_type:'strength', target_sets:3, target_reps:8, duration_seconds:null, progression_enabled:true, position:6, active:true},
   {name:'Leg Extension', exercise_type:'strength', target_sets:2, target_reps:10, duration_seconds:null, progression_enabled:true, position:7, active:true},
-  {name:'Paramount Lying Leg Curl', exercise_type:'strength', target_sets:2, target_reps:10, duration_seconds:null, progression_enabled:true, position:8, active:true},
+  {name:'Lying Leg Curl', exercise_type:'strength', target_sets:2, target_reps:10, duration_seconds:null, progression_enabled:true, position:8, active:true},
   {name:'Decline Reverse Crunch / Leg Raise using decline abdominal bench', exercise_type:'bodyweight', target_sets:3, target_reps:10, duration_seconds:null, progression_enabled:false, position:9, active:true},
   {name:'Cable Tricep Pushdown', exercise_type:'strength', target_sets:3, target_reps:10, duration_seconds:null, progression_enabled:true, position:10, active:true},
   {name:'Dumbbell Bicep Curl', exercise_type:'strength', target_sets:3, target_reps:10, duration_seconds:null, progression_enabled:true, position:11, active:true}
@@ -77,7 +77,7 @@ async function ensureUserInitialized(user) {
 
   const { data: exerciseRows, error: exerciseError } = await supabase.from('exercises').select('*').eq('user_id', user.id).order('position', {ascending: true});
   if(exerciseError){ console.error('Supabase exercises query failed', exerciseError); throw exerciseError; }
-  const existingExerciseNames=new Set(exerciseRows.map(row=>row.name));
+  const existingExerciseNames=new Set(exerciseRows.map(row=>row.name==='Paramount Lying Leg Curl'?'Lying Leg Curl':row.name));
   const missingExerciseRows=defaultExercises.filter(row=>!existingExerciseNames.has(row.name)).map(row => ({ user_id: user.id, name: row.name, exercise_type: row.exercise_type, target_sets: row.target_sets, target_reps: row.target_reps, duration_seconds: row.duration_seconds, weight_tracking: row.exercise_type === 'strength', rep_tracking: row.exercise_type !== 'timed', rest_between_sets_seconds: null, rest_after_exercise_seconds: null, position: row.position, active: row.active }));
   if(missingExerciseRows.length){
     const {error: insertExerciseError} = await supabase.from('exercises').insert(missingExerciseRows);
@@ -92,6 +92,7 @@ function fromSupabaseRows(user, results) {
   const routineId='supabase-routine';
   const exercises=(results.exercises.data||[]).map(row=>({
     ...row,
+    name:row.name==='Paramount Lying Leg Curl'?'Lying Leg Curl':row.name,
     exercise_type: row.exercise_type==='timed'?'warmup':row.exercise_type,
     target_sets: row.exercise_type==='timed'?1:row.target_sets,
     routine_id: routineId,
@@ -215,10 +216,6 @@ export async function signIn(email,password) {
   if(!authData?.user){ throw new Error('Supabase sign-in succeeded but no user was returned.'); }
   await ensureUserInitialized(authData.user);
   return refresh();
-}
-export async function signUp(email,password) {
-  const supabase = await ensureClient();
-  const {error}=await supabase.auth.signUp({email,password}); if(error) throw error;
 }
 export async function signOut() {const supabase = await ensureClient(); const {error}=await supabase.auth.signOut(); if(error) throw error; data=null;}
 export async function refresh() {

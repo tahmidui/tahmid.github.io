@@ -6,7 +6,7 @@ export const DEFAULT_EXERCISES = [
     {name:'Lat Pulldown', exercise_type:'strength', target_sets:3, target_reps:8, duration_seconds:null, progression_enabled:true, position:5},
     {name:'Rotary Shoulder', exercise_type:'strength', target_sets:3, target_reps:8, duration_seconds:null, progression_enabled:true, position:6},
     {name:'Leg Extension', exercise_type:'strength', target_sets:2, target_reps:10, duration_seconds:null, progression_enabled:true, position:7},
-    {name:'Paramount Lying Leg Curl', exercise_type:'strength', target_sets:2, target_reps:10, duration_seconds:null, progression_enabled:true, position:8},
+    {name:'Lying Leg Curl', exercise_type:'strength', target_sets:2, target_reps:10, duration_seconds:null, progression_enabled:true, position:8},
     {name:'Decline Reverse Crunch / Leg Raise', exercise_type:'bodyweight', target_sets:3, target_reps:10, duration_seconds:null, progression_enabled:false, position:9},
     {name:'Cable Tricep Pushdown', exercise_type:'strength', target_sets:3, target_reps:10, duration_seconds:null, progression_enabled:true, position:10},
     {name:'Dumbbell Bicep Curl', exercise_type:'strength', target_sets:3, target_reps:10, duration_seconds:null, progression_enabled:true, position:11}
