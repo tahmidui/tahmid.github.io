@@ -1,0 +1,20 @@
+---
+title: "Religion and Subjective Well-Being"
+status: in-development
+summary: "Examining how religious beliefs and practices relate to happiness and life satisfaction using World Values Survey data."
+tools:
+  - "R"
+  - "Stata"
+packages: []
+tags:
+  - "Survey Analysis"
+categories: ["Research"]
+year: 2026
+order: 2
+---
+
+## Overview
+
+Examining how religious beliefs and practices relate to happiness and life satisfaction using World Values Survey data.
+
+Project details will be added as this work develops.

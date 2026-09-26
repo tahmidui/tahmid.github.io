@@ -1,0 +1,20 @@
+---
+title: "Workplace Well-Being and Retention"
+status: queued
+summary: "Exploring how work conditions, inequality, and organizational context relate to employee well-being."
+tools:
+  - "Python"
+  - "SQL"
+packages: []
+tags:
+  - "Statistical Analysis"
+categories: ["Research"]
+year: 2026
+order: 6
+---
+
+## Overview
+
+Exploring how work conditions, inequality, and organizational context relate to employee well-being.
+
+Project details will be added as this work develops.

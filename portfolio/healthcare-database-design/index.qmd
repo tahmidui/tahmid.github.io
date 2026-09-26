@@ -1,0 +1,21 @@
+---
+title: "Healthcare Database Design"
+status: in-development
+summary: "Designed a relational database schema and ERD connecting clinical and financial operations."
+tools:
+  - "SQL"
+  - "PostgreSQL"
+packages: []
+tags:
+  - "ERD"
+categories: []
+year: 2026
+order: 1
+status-note: "Available soon"
+---
+
+## Overview
+
+Designed a relational database schema and ERD connecting clinical and financial operations.
+
+Project details will be added as this work develops.

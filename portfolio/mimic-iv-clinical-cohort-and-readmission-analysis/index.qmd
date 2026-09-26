@@ -1,0 +1,20 @@
+---
+title: "MIMIC-IV Clinical Cohort and Readmission Analysis"
+status: queued
+summary: "Building a clinical cohort and exploring readmission patterns with healthcare data."
+tools:
+  - "SQL"
+  - "Python"
+packages: []
+tags:
+  - "Health Care Analytics"
+categories: ["Research"]
+year: 2026
+order: 4
+---
+
+## Overview
+
+Building a clinical cohort and exploring readmission patterns with healthcare data.
+
+Project details will be added as this work develops.

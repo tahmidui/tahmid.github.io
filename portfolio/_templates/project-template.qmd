@@ -1,0 +1,37 @@
+---
+title: "Project Title"
+status: queued
+summary: "One-sentence description of the project."
+tools:
+  - R
+packages: []
+tags: []
+categories:
+  - Research
+year: 2026
+order: 99
+---
+
+## Overview
+
+Write a short introduction here.
+
+## Question
+
+What question does this project answer?
+
+## Data
+
+Describe the data.
+
+## Approach
+
+Describe the methods.
+
+## Results
+
+Add the results when available.
+
+## What I Learned
+
+Add reflections here.

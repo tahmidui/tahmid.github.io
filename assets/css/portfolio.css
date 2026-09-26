@@ -1,0 +1,170 @@
+/* Shared palette comes from custom.css; fonts from portfolio-typography.css. */
+.portfolio-main {
+  width: min(100%, 1440px);
+  margin-inline: auto;
+  padding: clamp(7rem, 10vw, 10rem) 2rem clamp(4rem, 7vw, 7rem);
+}
+.portfolio-header {
+  max-width: var(--content-reading);
+  margin: 0 auto clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+}
+.portfolio-header h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1.08;
+}
+.portfolio-header p {
+  max-width: 48ch;
+  margin: 0 auto;
+  color: var(--clay);
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+}
+.project-summary, .project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.project-summary { margin-bottom: 1.5rem; }
+.project-filters { margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+.portfolio-main [hidden] { display: none !important; }
+.status-tag, .summary-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.summary-chip { background: var(--sand); }
+.status-available { color: #28563c; background: #e6eee5; }
+.status-development { color: #685015; background: #f3ebcf; }
+.calendar-icon { width: 1em; height: 1em; flex: 0 0 auto; vertical-align: -0.1em; }
+.status-queued { color: #355476; background: #e5ebf2; }
+.portfolio-page .filter-button {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  height: auto;
+  padding: 0.45rem 0.85rem;
+  border-radius: 5px;
+  box-shadow: none;
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+.portfolio-page .filter-button[aria-pressed="true"] {
+  background: var(--navy);
+  color: var(--paper) !important;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.project-grid > li { min-width: 0; padding: 0; }
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.4rem;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--clay);
+  border-radius: 0 0 var(--radius) var(--radius);
+  overflow-wrap: anywhere;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+.project-card:is(:hover, :focus-within) {
+  transform: translateY(-2px);
+  border-color: var(--clay);
+  background: rgba(231, 222, 205, 0.18);
+  box-shadow: 0 8px 20px rgba(10, 18, 42, 0.07);
+}
+.project-card h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+.project-link { color: inherit; text-decoration: none; }
+/* Stretched link leaves technology labels independently focusable. */
+.project-link::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+.project-card:has(.project-link:focus-visible) { outline: 2px solid var(--navy); outline-offset: 4px; }
+.project-status { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; margin-bottom: 1rem; }
+.project-soon { color: var(--clay); font-family: var(--font-mono); font-size: 0.65rem; }
+.status-icon { display: inline-block; transition: transform 0.2s ease; }
+.project-card:is(:hover, :focus-within) .status-icon { transform: translateY(-1px) scale(1.12); }
+.project-description { margin: 0 0 1.25rem; font-size: 0.93rem; line-height: 1.7; }
+.project-tools { margin: auto 0 0; padding-top: 0.9rem; border-top: 1px solid var(--line); font-family: var(--font-mono); font-size: 0.68rem; line-height: 1.6; }
+.project-tools dt { margin-bottom: 0.6rem; font-size: inherit; font-weight: 600; }
+.project-tools dd { margin: 0; }
+.technology-list { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; }
+.technology {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 4px;
+  color: var(--navy);
+  background: var(--sand);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.technology i { font-size: 1.2rem; }
+.technology img { width: 1.3rem; height: 1.3rem; object-fit: contain; }
+.project-card:is(:hover, :focus-within) .technology { background: var(--paper); }
+.technology:is(:hover, :focus-visible) { transform: translateY(-2px); }
+.technology-tooltip {
+  position: absolute;
+  bottom: calc(100% + 0.4rem);
+  left: 0;
+  padding: 0.25rem 0.45rem;
+  color: var(--paper);
+  background: var(--navy);
+  border-radius: 3px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+.technology:is(:hover, :focus-visible) .technology-tooltip { opacity: 1; visibility: visible; }
+.project-view { margin-top: 1.1rem; color: var(--clay); font-size: 0.85rem; opacity: 0; transform: translateY(3px); transition: opacity 0.2s ease, transform 0.2s ease; }
+.project-card:is(:hover, :focus-within) .project-view { opacity: 1; transform: none; }
+.portfolio-page .site-nav-links a[aria-current="page"] { text-decoration: underline; text-decoration-thickness: 1px; }
+@media screen and (max-width: 1199px) { .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media screen and (max-width: 1100px) { .portfolio-page .site-nav-links a { flex-shrink: 0; } }
+@media screen and (max-width: 600px) {
+  .portfolio-main { padding-inline: 1.5rem; }
+  .project-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (hover: none) { .project-view { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-page .project-card, .portfolio-page .technology, .portfolio-page .status-icon, .portfolio-page .project-view, .portfolio-page .filter-button { transform: none !important; transition: none !important; }
+}
+
+.technology { text-decoration: none; }
+.project-card:not(:has(.project-metadata)) .project-view { margin-top: auto; padding-top: 1.1rem; }
+
+/* A single divider groups the three optional metadata sections. */
+.project-metadata { margin-top: auto; padding-top: 0.9rem; border-top: 1px solid var(--line); }
+.project-metadata .metadata-section { margin: 0; padding: 0; border: 0; font-family: var(--font-mono); font-size: 0.68rem; line-height: 1.6; }
+.project-metadata .metadata-section + .metadata-section { margin-top: 0.85rem; }
+.metadata-section dt { margin: 0 0 0.45rem; font-size: inherit; font-weight: 600; }
+.metadata-section dd { margin: 0; }
+.metadata-list { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
+.technology-text { width: auto; min-width: 2rem; padding-inline: 0.5rem; }
+.technology-name, .package-chip, .tag-chip { display: inline-block; padding: 0.2rem 0.45rem; border: 1px solid var(--line); border-radius: 4px; line-height: 1.6; }
+.technology-name { background: var(--sand); }
+.package-chip { background: transparent; }
+.tag-health { background: #e6eee5; color: #28563c; }
+.tag-research { background: #e5ebf2; color: #355476; }
+.tag-design { background: #f0e5df; color: var(--clay); }
+.tag-neutral { background: var(--sand); color: var(--navy); }

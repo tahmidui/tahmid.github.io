@@ -1,0 +1,23 @@
+# Only project QMD files are rendered; portfolio/index.html stays hand-maintained.
+project:
+  type: default
+  render:
+    - "*/index.qmd"
+    - "!_templates/**"
+format:
+  html:
+    theme: none
+    body-classes: portfolio-project-page
+    css:
+      - /assets/css/custom.css
+      - /assets/css/project.css
+      - /assets/css/portfolio-typography.css
+    include-before-body: _templates/project-nav.html
+    include-after-body: _templates/project-footer.html
+    toc: false
+    anchor-sections: false
+    lang: en
+# Plain Markdown works immediately. Enable execution per project when its
+# R/Python environment is ready, then add those dependencies to CI as needed.
+execute:
+  enabled: false

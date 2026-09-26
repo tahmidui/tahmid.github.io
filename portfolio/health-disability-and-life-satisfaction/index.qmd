@@ -1,0 +1,20 @@
+---
+title: "Health, Disability, and Life Satisfaction"
+status: in-development
+summary: "Investigating the relationship between health, disability, and subjective well-being using NHIS data."
+tools:
+  - "R"
+  - "Stata"
+packages: []
+tags:
+  - "Quantitative Research"
+categories: ["Research"]
+year: 2026
+order: 3
+---
+
+## Overview
+
+Investigating the relationship between health, disability, and subjective well-being using NHIS data.
+
+Project details will be added as this work develops.

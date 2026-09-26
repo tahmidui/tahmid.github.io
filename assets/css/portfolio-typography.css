@@ -1,0 +1,56 @@
+/* Shared only by the portfolio index and Quarto project pages. */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+
+.portfolio-page,
+.portfolio-project-page {
+  --font-display: "Manrope", sans-serif;
+  --font-body: "Work Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+:is(.portfolio-page, .portfolio-project-page) :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+:is(.portfolio-page, .portfolio-project-page) h1 {
+  font-weight: 700;
+}
+
+:is(.portfolio-page, .portfolio-project-page) :is(p, ul, ol, details, summary, input, select, textarea) {
+  font-family: var(--font-body);
+}
+
+.portfolio-page .portfolio-header p {
+  font-style: normal;
+  font-weight: 500;
+}
+
+.portfolio-page #site-nav,
+.portfolio-project-page .project-page-nav {
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+:is(.portfolio-page, .portfolio-project-page) :is(button, .button, .skip-link, code, pre, kbd, samp),
+.portfolio-page :is(.status-tag, .summary-chip, .project-tools, .project-soon, .project-view, .technology-tooltip) {
+  font-family: var(--font-mono);
+}
+
+.portfolio-page .project-view {
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+:is(.portfolio-page, .portfolio-project-page) :is(strong, b) {
+  font-weight: 600;
+}
+
+/* Override the shared footer's more specific serif and icon-label rules. */
+.portfolio-page footer.wrapper > .inner > p,
+.portfolio-page .icon > .label {
+  font-family: var(--font-body);
+}

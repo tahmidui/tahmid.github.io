@@ -1,0 +1,20 @@
+---
+title: "Business Performance Dashboard"
+status: queued
+summary: "Turning operational data into clear, decision-oriented visual insights."
+tools:
+  - "Tableau"
+  - "SQL"
+packages: []
+tags:
+  - "Data Visualization"
+categories: []
+year: 2026
+order: 8
+---
+
+## Overview
+
+Turning operational data into clear, decision-oriented visual insights.
+
+Project details will be added as this work develops.

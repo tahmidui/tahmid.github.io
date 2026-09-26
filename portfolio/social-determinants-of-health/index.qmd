@@ -1,0 +1,20 @@
+---
+title: "Social Determinants of Health"
+status: queued
+summary: "Analyzing how social and economic conditions shape health outcomes."
+tools:
+  - "R"
+packages: []
+tags:
+  - "Survey Data"
+  - "Data Visualization"
+categories: ["Research"]
+year: 2026
+order: 5
+---
+
+## Overview
+
+Analyzing how social and economic conditions shape health outcomes.
+
+Project details will be added as this work develops.

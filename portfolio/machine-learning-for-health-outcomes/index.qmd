@@ -1,0 +1,20 @@
+---
+title: "Machine Learning for Health Outcomes"
+status: queued
+summary: "Applying supervised machine-learning methods to a health-related prediction problem."
+tools:
+  - "Python"
+packages:
+  - "scikit-learn"
+tags:
+  - "Machine Learning"
+categories: ["Research"]
+year: 2026
+order: 7
+---
+
+## Overview
+
+Applying supervised machine-learning methods to a health-related prediction problem.
+
+Project details will be added as this work develops.
