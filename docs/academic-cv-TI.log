@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  18 SEP 2026 13:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  2 OCT 2026 20:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -452,7 +452,7 @@ File: fc-english.def 2016/01/12
 * \marginparwidth=65.0pt
 * \marginparsep=11.0pt
 * \columnsep=10.0pt
-* \skip\footins=9.225pt plus 4.0996pt minus 2.05042pt
+* \skip\footins=9.9pt plus 4.39957pt minus 2.20044pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -481,16 +481,16 @@ Package hyperref Info: Link coloring OFF on input line 43.
 \@outlinefile=\write3
 \openout3 = `academic-cv-TI.out'.
 
-LaTeX Font Info:    Calculating math sizes for size <10.25> on input line 49.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 49.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.25> on input line 49.
+(Font)              <11> on input line 49.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7.17496> on input line 49.
+(Font)              <7.69997> on input line 49.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5.125> on input line 49.
+(Font)              <5.5> on input line 49.
  [1
 
-{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [3] 
+{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [3] [4] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./academic-cv-TI.aux)
  ***********
@@ -498,21 +498,21 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `academic-cv-TI.out' has not changed.
-(rerunfilecheck)             Checksum: AF62BC9CCC8697EA78DEB8C0153DD177;1861.
+(rerunfilecheck)             Checksum: E9CA28586B7F86F97D873DE61E95D8C8;1838.
  ) 
 Here is how much of TeX's memory you used:
- 14205 strings out of 467525
- 246880 string characters out of 5418982
- 685863 words of memory out of 5000000
- 42945 multiletter control sequences out of 15000+600000
- 632807 words of font info for 57 fonts, out of 8000000 for 9000
+ 14207 strings out of 467525
+ 246859 string characters out of 5418982
+ 687814 words of memory out of 5000000
+ 42946 multiletter control sequences out of 15000+600000
+ 633106 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,1157b,567s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on academic-cv-TI.pdf (3 pages, 138219 bytes).
+ 75i,11n,79p,1157b,559s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on academic-cv-TI.pdf (4 pages, 129524 bytes).
 PDF statistics:
  137 PDF objects out of 1000 (max. 8388607)
- 110 compressed objects within 2 object streams
- 18 named destinations out of 1000 (max. 500000)
+ 111 compressed objects within 2 object streams
+ 19 named destinations out of 1000 (max. 500000)
  113 words of extra memory for PDF output out of 10000 (max. 10000000)
 
