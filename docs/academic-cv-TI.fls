@@ -1,8 +1,8 @@
-PWD /Users/tahmid/Library/CloudStorage/OneDrive-TexasTechUniversity/lifeOS/1-Projects/personal-website/docs
+PWD /Users/tahmid/Library/CloudStorage/OneDrive-TexasTechUniversity/lifeOS/1-Projects/tahmidulislam.me/docs
 INPUT /usr/local/texlive/2026/texmf.cnf
 INPUT /usr/local/texlive/2026/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/tahmid/Library/CloudStorage/OneDrive-TexasTechUniversity/lifeOS/1-Projects/personal-website/docs/academic-cv-TI.tex
+INPUT /Users/tahmid/Library/CloudStorage/OneDrive-TexasTechUniversity/lifeOS/1-Projects/tahmidulislam.me/docs/academic-cv-TI.tex
 OUTPUT academic-cv-TI.log
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/base/fix-cm.sty
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/base/fix-cm.sty
